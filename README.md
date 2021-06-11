@@ -8,4 +8,4 @@ Extra, ha jut rá idő :) :
 -Aktuális top # legtöbb példányt rendelő előfizetők (rájuk árkedvezmény vagy ajándék vonatkozhat); 
 -Statisztika a diszpécser kollégákról, hogy ki hány előfizetőt/rendelőt győzött meg az előfizetésről, vásárlásról (akár havi lebontásban, prémium vagy a hónap dolgozója); 
 -Top # legrégebb óta partner (hűségkedvezmény);
--Oszlopdiagram az egyes évek-ről, hogy az adott hónapokban hány megrendelés érkezett (kombinálható a diszpécserese résszel);
+-Oszlopdiagram az egyes évek-ről, hogy az adott hónapokban hány megrendelés érkezett (kombinálható a diszpécseres résszel);
