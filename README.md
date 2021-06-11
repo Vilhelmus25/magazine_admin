@@ -6,6 +6,6 @@ Képes lesz az ügyfelek között szűrni, táblázatos formában megjeleníteni
 Extra, ha jut rá idő :) :
 -Egy statisztikai "dashboard" arról, hogy mely településeken hány előfizető van; 
 -Aktuális top # legtöbb példányt rendelő előfizetők (rájuk árkedvezmény vagy ajándék vonatkozhat); 
--Statisztika a diszpécser kollégákról, hogy ki hány előfizetőt/rendelőt győzött meg az előfizetésről, vásárlásról; 
+-Statisztika a diszpécser kollégákról, hogy ki hány előfizetőt/rendelőt győzött meg az előfizetésről, vásárlásról (akár havi lebontásban, prémium vagy a hónap dolgozója); 
 -Top # legrégebb óta partner (hűségkedvezmény);
--Oszlopdiagram az egyes évek-ről, hogy az adott hónapokban hány megrendelés érkezett;
+-Oszlopdiagram az egyes évek-ről, hogy az adott hónapokban hány megrendelés érkezett (kombinálható a diszpécserese résszel);
