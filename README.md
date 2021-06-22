@@ -36,7 +36,7 @@ Ezek az adatok a számlaszám, a név/cégnév, a postázási cím (ami szepará
 > _Új előfizető adatai vehetők fel._
 
 **Elfogadási kritérium:**  
-- A kötelező adatok megadásával egy új előfizető adatait lehet felvinni, a helyes névkonvenciót betartva minden ponton lehetséges az új előfizető felvenni.
+- A kötelező adatok megadásával egy új előfizető adatait lehet felvinni, minden ponton a helyes névkonvenciót betartva nyílik lehetőség az új előfizetőt felvenni.
 - Az oldalon lehetőség van arra, hogy az összes előfizetőt listázó oldalra navigáljon vissza az alkalmazás.
 
 ---
@@ -85,7 +85,7 @@ A kategória kiválasztásával és a kulcsszónak megfelelően frissül a lista
 > _Archiválás_
 
 **Elfogadási kritérium:**  
-- Egy új szám megjelenése és az előfizetők részére annak kipostázása után, legyen lehetőség archiválásra, ami műveletet végrehajtva a listából kikerülnek azon előfizetők, akik felé már nincs előfizetői példány kipostázási kötelezettsége a forgalmazónak egy új szám megjelenése idején, mivel lejárt az előfizetési kvóta.
+- Az előfizetők részére egy új szám megjelenésekor és annak kipostázása után, legyen lehetőség archiválásra, ami műveletet végrehajtva minden hátralévő előfizetés évszáma eggyel csökken és a listából kikerülnek azon előfizetők, akik felé már nincs előfizetői példány kipostázási kötelezettsége a forgalmazónak egy új szám megjelenése idején, mivel lejárt az előfizetési kvóta.
 
 ---
 
@@ -94,7 +94,7 @@ A kategória kiválasztásával és a kulcsszónak megfelelően frissül a lista
 > _Előfizetői igazolás kiállítása_
 
 **Elfogadási kritérium:**  
-- Legyen lehetőség egy kiválasztott előfizető esetén egy előfizetői igazolás kiállításáról, tartalmazva az adott előfizető adatait, a magazint kibocsájtó cég adataival (cím, adószám, vezető neve), jogi hivatkozás, aláírás, pecsét helyével.  
+- Legyen lehetőség egy kiválasztott előfizető esetén egy előfizetői igazolás kiállításáról, tartalmazva az adott előfizető adatait (név/cégnév, cím, adószám, szerződéskötés dátuma, hátralévő előfizetési évszám, rendelt darabszám), a magazint kibocsájtó cég adataival (cím, adószám, vezető neve), jogi hivatkozás, aláírás, pecsét helyével.  
 
 ---
 
@@ -107,7 +107,7 @@ A kategória kiválasztásával és a kulcsszónak megfelelően frissül a lista
 > _Az archivált előfizetők megjelenítése_
 
 **Elfogadási kritérium:**  
-Az oldal megjeleníti az összes archivált előfizetőt egy táblázatban, ugyanazon adatok szerint, mint az _Előfizetői adatbázisban_, kivéve a hány évre szóló előfizetés adatot, mivel az irreleváns itt. Az adatokat csak olvasni lehet, nem lehet szerkeszteni.
+Az oldal megjeleníti az összes archivált előfizetőt egy táblázatban, ugyanazon adatok szerint, mint az _Előfizetői adatbázisban_, kivéve a hány évre szóló előfizetés adatot, mivel az irreleváns itt. Az adatokat csak olvasni lehet, nem lehet módosítani.
 
 ---
 
@@ -156,7 +156,7 @@ Az oldal megjeleníti az összes archivált előfizetőt egy táblázatban, ugya
 ---
 
 **1. agilis felhasználói történet:**
-> _Az igazolás sablon megjelenítése_
+> _Éves előfizetési statisztika megjelenítése_
 
 **Elfogadási kritérium:**  
 - Egy statisztikai diagram az egyes évek-ről, hogy az év hónapjaiban hány megrendelés érkezett, az évek között lehet navigálni.
@@ -179,6 +179,7 @@ magas
 - Hibaüzenetek megjelenítése (validálás).
 - Felugró ablakok, a kritikus műveletek rákérdezésére.
 - Toasterek a műveletek sikerességének visszajelzéséről.
+- Top # legrégebb óta partner (hűségkedvezmény). Esetleg a nevük megjelenhet a főoldalon.
 
 ---
 ---
