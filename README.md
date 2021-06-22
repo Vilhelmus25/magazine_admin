@@ -16,18 +16,18 @@ Egy mobiloptimalizált, a szemnek vonzó és látványos felületen egy jól lá
 
 ---
 ---
-## _**2. Vásárlói/előfizetői adatbázis**_
+## _**2. Előfizetői adatbázis**_
 ---
 
 **1. agilis felhasználói történet:**
-> _Egy helyen áttekinthetők és szerkeszthetők a magazin 
-> több mint ezer ügyfelének legfontosabb adatai
+> _Egy helyen áttekinthetők a magazin több,
+> mint ezer ügyfelének legfontosabb adatai
 > egy jól átlátható, táblázatos weboldalon._
 
 
 **Elfogadási kritérium:**  
 Az oldalra navigálva megjelenik az összes ügyfél adata egy helyen kilistázva.  
-Ezek az adatok a szerződésszám (szerződés azonosító), a név/cégnév, a postázási cím (ami szeparáltan, irányítószám, város, cím), hány évszámra szól még a megrendelő előfizetése, hány darab-ot rendelt, illetve melyik diszpécser kollégán keresztül bonyolódott le az előfizetés.
+Ezek az adatok a számlaszám, a név/cégnév, a postázási cím (ami szeparáltan, irányítószám, város, cím), mennyi évszámra szólt az előfizetés a szerződés megkötésekor, hány évszámra szól még a megrendelő előfizetése, hány darab-ot rendelt (évszámonként), illetve melyik diszpécser kollégán keresztül bonyolódott le az előfizetés.
 
 ---
 
@@ -89,33 +89,79 @@ A kategória kiválasztásával és a kulcsszónak megfelelően frissül a lista
 
 ---
 
-**7. agilis felhasználói történet:**
+**8. agilis felhasználói történet:**
 
 > _Előfizetői igazolás kiállítása_
 
 **Elfogadási kritérium:**  
-- Legyen lehetőség egy kiválasztott előfizető esetén egy előfizetői igazolás kiállításáról, tartalmazva az adott előfizető adatait, a magazint kibocsájtó cég adataival, aláírás, pecsét helyével.  
+- Legyen lehetőség egy kiválasztott előfizető esetén egy előfizetői igazolás kiállításáról, tartalmazva az adott előfizető adatait, a magazint kibocsájtó cég adataival (cím, adószám, vezető neve), jogi hivatkozás, aláírás, pecsét helyével.  
 
 ---
 
 ---
 ---
-## _**3. A Marvel Universe aloldalai**_
----
-
-**_Marvel Characters - Készítői oldal_**
-
+## _**3. Az archivált előfizetők**_
 ---
 
 **1. agilis felhasználói történet:**
-> _A Marvel karakterek aloldalon megjelennek a marveles karakterek kifejezetten a készítők által lényegesnek tartott adatai._
+> _Az archivált előfizetők megjelenítése_
 
 **Elfogadási kritérium:**  
-Az aloldal megjeleníti az összes marveles karakter adatait lista formátumban. Ezek az adatok a következők: azonosító, név, kép, a karakter marveles oldalára mutató link, hányszor tért vissza a szuperhős, jelenleg dolgoznak-e vele kapcsolatos történeteken.
+Az oldal megjeleníti az összes archivált előfizetőt egy táblázatban, ugyanazon adatok szerint, mint az _Előfizetői adatbázisban_, kivéve a hány évre szóló előfizetés adatot, mivel az irreleváns itt. Az adatokat csak olvasni lehet, nem lehet szerkeszteni.
 
 ---
 
+**2. agilis felhasználói történet:**
+> _Különbözőképpen sorrendbe rendezhetőek az előfizetők egyes kategóriái._
 
+**Elfogadási kritérium:**  
+- A szám típusú adatok alapján növekvő és csökkenő sorrendben lehet rendezni az előfizetőket.
+- A szöveges adatok alapján abc-szerinti és fordított sorrendben lehet rendezni az előfizetőket.
+
+---
+
+**3. agilis felhasználói történet:**
+
+> _Bármilyen kulcsszóra lehet keresni egy választott kategórián belül._
+
+**Elfogadási kritérium:**  
+- A kategória kiválasztásával és a kulcsszónak megfelelően frissül a listaoldal, ahol csak a szűrt adatok láthatók.
+
+---
+
+---
+---
+## _**4. Az igazolás sablon**_
+---
+
+**1. agilis felhasználói történet:**
+> _Az igazolás sablon megjelenítése_
+
+**Elfogadási kritérium:**  
+- Az aktuális igazolás sablon megjelenítése, megtekintés céljából.
+
+---
+
+**2. agilis felhasználói történet:**
+> _Az igazolás sablon szerkesztése/módosítása_
+
+**Elfogadási kritérium:**  
+- Adószám, vezető, cím, módosulás esetén a kibocsájtó cég részéről, vagy jogi hivatkozás módosulása esetén, az igazolás sablonban szereplő előbbi adatoknak módosíthatónak kell lenniük.
+
+---
+
+---
+---
+## _**5. Statisztikák**_
+---
+
+**1. agilis felhasználói történet:**
+> _Az igazolás sablon megjelenítése_
+
+**Elfogadási kritérium:**  
+- Egy statisztikai diagram az egyes évek-ről, hogy az év hónapjaiban hány megrendelés érkezett, az évek között lehet navigálni.
+
+---
 
 ---
 ---
@@ -129,16 +175,11 @@ magas
 10 hét
 
 **További fejlesztési lehetőségek:**  
-- A DC Univerzum hasonló aloldalainak elkészítése.
+- Statisztika a diszpécser kollégákról, hogy ki hány előfizetőt/rendelőt győzött meg az előfizetésről, vásárlásról, havi és/vagy globális lebontásban.
 - Hibaüzenetek megjelenítése (validálás).
-- A főoldalon statisztikák elhelyezése.
-- Az egyes aloldalakon statisztikák, kimutatások készítése a legfontosabb adatokból.
-- Az aloldalak lista nézete mellett kártya nézet kialakítása.
-- A szuperhősöket listázó aloldalon lapozó készítése.
-- A szuperhősöket listázó aloldalon az alábbi adatok megadása:
+- Felugró ablakok, a kritikus műveletek rákérdezésére.
+- Toasterek a műveletek sikerességének visszajelzéséről.
 
-Kiegészítések helye | Tartalma
------------- | -------------
-megjelenés | szem- és hajszín megadása |
-életrajzi adatok | teljes név, alteregók, aliasok, születési hely, kiadó |
-kapcsolatok | családi kapcsolatok
+---
+---
+---
