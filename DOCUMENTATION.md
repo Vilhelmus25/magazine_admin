@@ -31,3 +31,4 @@ A megadott Docker container indítása és inicializálása.
 
 - [A User Story (adminisztrátori szerepkör) itt érhető el.](https://github.com/Vilhelmus25/magazine_admin/blob/main/README.md)
 
+- [A kiegészítő anyagok itt érhetők el.](https://github.com/Vilhelmus25/magazine_admin/blob/main/Developer%20Documentation/DEVELOPER_DOCUMENTATION.md)
