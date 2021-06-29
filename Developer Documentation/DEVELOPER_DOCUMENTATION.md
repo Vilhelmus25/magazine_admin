@@ -32,7 +32,7 @@ Az alkalmazás feladata, hogy a Koala képességfejlesztő gyermekmagazin előfi
 ## **Főbb részei:**
 
 ---
-
+---
 ## _**1. Főoldal**_
 
 **Komponens neve:** home  
@@ -43,7 +43,7 @@ Egy mobiloptimalizált, látványos felületen nagyban a Koala magazin logója l
 _Megjegyzés_: Opcionálisan képek jelennek meg egy BS carousel komponensben.
 
 ---
-
+---
 ## _**2. Navigáció**_
 
 **Komponens neve:** navigation  
@@ -161,6 +161,7 @@ Ezek az adatok a következők:
 -  A Back gombra kattintva az összes előfizetőt listázó oldalra navigál vissza az alkalmazás.
 
 ---
+---
 ## _**4. Az Archivált előfizetők oldala**_
 ---
 
@@ -216,6 +217,7 @@ Ezek az adatok megegyeznek szinte teljesen Előfizetők adatbázisa oldallal, ez
 - A fejlécen található felfelé mutató nyíl ikonra kattintva az alkalmazás fordított sorba rendezi a választott adatok szerint az entitásokat.
 
 ---
+---
 ## _**5. Az Igazolás sablon oldala**_
 ---
 
@@ -260,8 +262,6 @@ A sablon adatai a következők:
 ---
 ---
 ## _**6. Statisztikák**_
----
-
 ---
 
 **Osztály neve:** statistics   
