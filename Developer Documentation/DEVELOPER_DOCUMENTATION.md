@@ -65,7 +65,7 @@ Az egyes aloldalakra az Angular routing segítségével lehet navigálni egy BS 
 **Osztály helye:** model/subscriber
 
 **Service neve:** subscriber  
-**Osztály helye:** service/subscriber
+**Service helye:** service/subscriber
 
 **Komponens neve:** subscriber  
 **Komponens helye:** page/subscriber
@@ -175,7 +175,7 @@ _Megjegyzés:_ Az elérési útvonalban az aloldalak elnevezése előtt szerepel
 **Osztály helye:** model/archived-subscriber  
 
 **Service neve:** archived-subscriber   
-**Osztály helye:** service/archived-subscriber  
+**Service helye:** service/archived-subscriber  
 
 **Komponens neve:** archived-subscriber    
 **Komponens helye:** page/archived-subscriber  
@@ -231,7 +231,7 @@ _Megjegyzés:_ Az elérési útvonalban az aloldalak elnevezése előtt szerepel
 **Osztály helye:** model/certificate-sample  
 
 **Service neve:** certificate-sample  
-**Osztály helye:** service/certificate-sample  
+**Service helye:** service/certificate-sample  
 
 **Komponens neve:** certificate-sample    
 **Komponens helye:** page/certificate-sample  
@@ -268,7 +268,7 @@ A sablon adatai a következők:
 **Osztály helye:** model/statistics
 
 **Service neve:** statistics  
-**Osztály helye:** service/statistics
+**Service helye:** service/statistics
 
 **Komponens neve:** statistics  
 **Komponens helye:** page/statistics
