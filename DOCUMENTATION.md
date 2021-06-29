@@ -1,6 +1,6 @@
 ## **1. Az alkalmazás célja**
 
-Az alkalmazás feladata, hogy a Marvel és a DC szuperhőseinek, illetve a Marvel Univerzum karaktereinek, képregényeinek, történeteinek és készítőinek, valamint a legfontosabb szuperhősös eseményeinek adatait nyilvántartsa és kezelje.
+Az alkalmazás feladata, hogy a Koala képességfejlesztő gyermekmagazin előfizetőinek az adatait nyilvántartsa, kezelje, valamint az előfizetésekről szóló szerződést kiállítsa.
 
 ## **2. Az alkalmazás telepítése**
 
