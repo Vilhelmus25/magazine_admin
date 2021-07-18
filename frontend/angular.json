@@ -31,9 +31,12 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/styles.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/scripts.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -127,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "frontend"
+  "defaultProject": "frontend",
+  "cli": {
+    "analytics": "4836370d-833b-4852-8862-ebeccd280c8b"
+  }
 }
