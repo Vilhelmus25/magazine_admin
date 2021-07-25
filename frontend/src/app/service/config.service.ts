@@ -4,6 +4,8 @@ export interface ITableColumn {
   title: string;
   key: string;
   hidden?: boolean;
+  outputTransform?: any;
+  htmlOutput?: any;
 }
 
 @Injectable({
@@ -22,7 +24,7 @@ export class ConfigService {
     { key: "licence_id", title: "LicenceID" },
     { key: "licenced_seasons", title: "LicencedSeasons" },
     { key: "seasons_left", title: "SeasonsLeft" },
-    { key: "amount", title: "Amount" },
+    { key: "amount", title: "Amount", outputTransform: (v: string) => `${v} pcs` },
     { key: "colleague", title: "Colleague" },
   ];
 
@@ -34,9 +36,11 @@ export class ConfigService {
     { key: "address", title: "Address" },
     { key: "licence_id", title: "LicenceID" },
     { key: "licenced_seasons", title: "LicencedSeasons" },
-    { key: "amount", title: "Amount" },
+    { key: "amount", title: "Amount", outputTransform: (v: string) => `${v} db` },
     { key: "colleague", title: "Colleague" },
   ];
 
   constructor() { }
+
+  //static
 }

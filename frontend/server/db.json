@@ -1,7 +1,7 @@
 {
     "subscribers": [
         {
-            "__id": "kgasiodfwepfjpGIOHoijef",
+            "_id": "kgasiodfwepfjpGIOHoijef",
             "name": "Joe Doe's Taekwon Doe Company",
             "postalCode": 23151,
             "city": "Doe City",
@@ -13,7 +13,7 @@
             "colleague": "Csapóné Szécsényi Katalin"
         },
         {
-            "__id": "dasdg3GERG4tenst",
+            "_id": "dasdg3GERG4tenst",
             "name": "Comman Doe",
             "postalCode": 32416,
             "city": "Gotham City",
@@ -27,7 +27,7 @@
     ],
     "archive": [
         {
-            "__id": "kgasiodfwepfjpGIOHoijef",
+            "_id": "kgasiodfwepfjpGIOHoijef",
             "name": "Joe Doe's Taekwon Do(e) Company",
             "postalCode": 23151,
             "city": "Doe City",
@@ -38,7 +38,7 @@
             "colleague": "Csapóné Szécsényi Katalin"
         },
         {
-            "__id": "dasdg3GERG4tenst",
+            "_id": "dasdg3GERG4tenst",
             "name": "Comman Doe",
             "postalCode": 32416,
             "city": "Gotham City",

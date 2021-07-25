@@ -16,7 +16,16 @@
                 </tr>
             </tfoot>
             <tbody>
-
+                <tr *ngFor="let row of list$ | async">
+                    <td *ngFor="let col of tableColumns">
+                        <span *ngIf="!col.outputTransform">
+                            {{ row[col.key] }}
+                        </span>
+                        <span *ngIf="col.outputTransform">
+                            {{ col.outputTransform(row[col.key]) }}
+                        </span>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
