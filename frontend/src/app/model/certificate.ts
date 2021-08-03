@@ -1,5 +1,5 @@
 export class Certificate {
-    //_id: string = "";
+    _id: string = "";
     name: string = "";
     taxNumber: string = "";
     headquarters: string = "";
