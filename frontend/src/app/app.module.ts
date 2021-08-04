@@ -13,6 +13,7 @@ import { ArchiveComponent } from './page/archive/archive.component';
 import { StatisticsComponent } from './page/statistics/statistics.component';
 import { CertificateComponent } from './page/certificate/certificate.component';
 import { DataTableComponent } from './common/data-table/data-table.component';
+import { LoginComponent } from './page/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DataTableComponent } from './common/data-table/data-table.component';
     ArchiveComponent,
     StatisticsComponent,
     CertificateComponent,
-    DataTableComponent
+    DataTableComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

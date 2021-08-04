@@ -1,6 +1,7 @@
 export class Subscriber {
-    _id: number = 0;
-    name: string = "";
+    _id: string = "";
+    name?: string = "";
+    email?: string = "";
     postalCode?: number = 0;
     city?: string = "";
     address?: string = "";

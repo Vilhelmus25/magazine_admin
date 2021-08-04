@@ -8,7 +8,7 @@ import { Certificate } from '../model/certificate';
 @Injectable({
   providedIn: 'root'
 })
-export class BaseService<T>{
+export class BaseService<T extends { _id?: string }>{
 
   entity: string = '';
 
@@ -29,9 +29,9 @@ export class BaseService<T>{
     return this.http.post<T>(`${this.config.apiUrl}${this.entity}`, entity);
   }
 
-  update(entity: Subscriber | Certificate): Observable<Subscriber | Certificate> {                // ide lehet kéne hagyni T -t de akkor az entity._id miatt sír.
-    return this.http.patch<Subscriber | Certificate>(`${this.config.apiUrl}${this.entity}/${entity._id}`, entity);
-    // patch, hogy nehogy felülírjuk a teljes objektumot, ha nem küldünk el minden adatot, hogy ne legyen adat vesztés
+  update(entity: T): Observable<T> {                // ide lehet kéne hagyni T -t de akkor az entity._id miatt sír.
+    return this.http.patch<T>(`${this.config.apiUrl}${this.entity}/${entity._id}`, entity);
+    // patch, hogy nehogy felülírjuk a teljes objektumot, ha nem küldünk el minden adatot, hogy ne legyen adat vesztés, tehát felülír, de újat nem ír hozzá, nem töröl stb.
   }
 
   remove(_id: string): Observable<T> {

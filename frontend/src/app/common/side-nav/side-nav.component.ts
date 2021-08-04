@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Subscriber } from 'src/app/model/subscriber';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
-  constructor() { }
+  subscriber$: BehaviorSubject<Subscriber | null> = this.auth.currentSubscriberSubject$;
+
+  constructor(
+    private auth: AuthService,
+  ) { }
 
   ngOnInit(): void {
   }

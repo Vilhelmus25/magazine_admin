@@ -1,52 +1,54 @@
 {
-    "subscribers": [
-        {
-            "_id": "kgasiodfwepfjpGIOHoijef",
-            "name": "Joe Doe's Taekwon Doe Company",
-            "postalCode": 23151,
-            "city": "Doe City",
-            "address": "JohnDoe Street 123",
-            "licence_id": 51234160,
-            "licenced_seasons": 4,
-            "seasons_left": 3,
-            "amount": 8,
-            "colleague": "Csapóné Szécsényi Katalin"
-        },
-        {
-            "_id": "dasdg3GERG4tenst",
-            "name": "Comman Doe",
-            "postalCode": 32416,
-            "city": "Gotham City",
-            "address": "DoeDoe Street 123",
-            "licence_id": 72475245,
-            "licenced_seasons": 2,
-            "seasons_left": 1,
-            "amount": 3,
-            "colleague": "Csapóné Szécsényi Katalin"
-        }
-    ],
-    "archive": [
-        {
-            "_id": "kgasiodfwepfjpGIOHoijef",
-            "name": "Joe Doe's Taekwon Do(e) Company",
-            "postalCode": 23151,
-            "city": "Doe City",
-            "address": "JohnDoe Street 123",
-            "licence_id": 51234160,
-            "licenced_seasons": 4,
-            "amount": 8,
-            "colleague": "Csapóné Szécsényi Katalin"
-        },
-        {
-            "_id": "dasdg3GERG4tenst",
-            "name": "Comman Doe",
-            "postalCode": 32416,
-            "city": "Gotham City",
-            "address": "DoeDoe Street 123",
-            "licence_id": 72475245,
-            "licenced_seasons": 2,
-            "amount": 3,
-            "colleague": "Csapóné Szécsényi Katalin"
-        }
-    ]
+  "subscribers": [
+    {
+      "_id": "kgasiodfwepfjpGIOHoijef",
+      "name": "John Doe's Taekwon Do(e) Company",
+      "email": "jdtdc@company.net",
+      "postalCode": 23151,
+      "city": "Doe City",
+      "address": "JohnDoe Street 123",
+      "licence_id": 51234160,
+      "licenced_seasons": 4,
+      "seasons_left": 3,
+      "amount": 8,
+      "colleague": "Csapóné Szécsényi Katalin",
+      "password": "test"
+    },
+    {
+      "_id": "dasdg3GERG4tenst",
+      "name": "Comman Doe",
+      "postalCode": 32416,
+      "city": "Gotham City",
+      "address": "DoeDoe Street 123",
+      "licence_id": 72475245,
+      "licenced_seasons": 2,
+      "seasons_left": 1,
+      "amount": 3,
+      "colleague": "Csapóné Szécsényi Katalin"
+    }
+  ],
+  "archive": [
+    {
+      "_id": "kgasiodfwepfjpGIOHoijef",
+      "name": "Joe Doe's Taekwon Do(e) Company",
+      "postalCode": 23151,
+      "city": "Doe City",
+      "address": "JohnDoe Street 123",
+      "licence_id": 51234160,
+      "licenced_seasons": 4,
+      "amount": 8,
+      "colleague": "Csapóné Szécsényi Katalin"
+    },
+    {
+      "_id": "dasdg3GERG4tenst",
+      "name": "Comman Doe",
+      "postalCode": 32416,
+      "city": "Gotham City",
+      "address": "DoeDoe Street 123",
+      "licence_id": 72475245,
+      "licenced_seasons": 2,
+      "amount": 3,
+      "colleague": "Csapóné Szécsényi Katalin"
+    }
+  ]
 }
