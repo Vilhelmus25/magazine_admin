@@ -4,14 +4,15 @@
       "_id": "kgasiodfwepfjpGIOHoijef",
       "name": "John Doe's Taekwon Do(e) Company",
       "email": "jdtdc@company.net",
-      "postalCode": 23151,
+      "postalCode": "2315",
       "city": "Doe City",
       "address": "JohnDoe Street 123",
       "licence_id": 51234160,
       "licenced_seasons": 4,
       "seasons_left": 3,
       "amount": 8,
-      "colleague": "Csapóné Szécsényi Katalin"
+      "colleague": "Csapóné Szécsényi Katalin",
+      "licnced_seasons": 4
     },
     {
       "_id": "dasdg3GERG4tenst",

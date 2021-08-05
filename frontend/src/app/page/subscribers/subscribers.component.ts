@@ -25,7 +25,7 @@ export class SubscribersComponent implements OnInit {
   }
 
   onSelectOne(subscriber: Subscriber): void {
-    this.router.navigate(['edit', subscriber._id]);
+    this.router.navigate(['subscribers/edit/', subscriber._id]);
   }
 
 }

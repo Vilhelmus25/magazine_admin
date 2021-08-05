@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http/';
 import { FormsModule } from '@angular/forms';
 
+import { AreusFormModule } from './areus-form/areus-form.module';
+
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './common/navigation/navigation.component';
 import { SideNavComponent } from './common/side-nav/side-nav.component';
@@ -15,6 +17,7 @@ import { CertificateComponent } from './page/certificate/certificate.component';
 import { DataTableComponent } from './common/data-table/data-table.component';
 import { LoginComponent } from './page/login/login.component';
 import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    AreusFormModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
