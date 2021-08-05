@@ -30,6 +30,8 @@ export class AuthService {
     }
   }
 
+  // npm install bcryptjs
+
   login(loginData: Subscriber): Observable<Subscriber | null> {
     return this.http.post<{ subscriber: Subscriber, accessToken: string }>(       // postolunk mert be akarunk jelentkezni, az accesstokent és a usert küld vissza a szerver
       this.loginUrl,   // hova

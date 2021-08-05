@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   }
   onLogin(): void {
     this.auth.login(this.subscriber).subscribe(
-      subscriberResponse => {
-        if (subscriberResponse) {
+      subscriber => {
+        if (subscriber) {
           this.router.navigate(['/']);        // a főoldalra navigál, ha van subscriber
         }
         // error handling here:
