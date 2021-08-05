@@ -18,7 +18,6 @@ export class ConfigService {
   subscriberColumns: ITableColumn[] = [
     { key: "_id", title: "#" },
     { key: "name", title: "Name" },
-    { key: "email", title: "Email" },
     { key: "postalCode", title: "PostalCode" },
     { key: "city", title: "City" },
     { key: "address", title: "Address" },

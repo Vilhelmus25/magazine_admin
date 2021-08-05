@@ -6,12 +6,18 @@
                     <th *ngFor="let col of tableColumns">
                         {{ col.title }}
                     </th>
+                    <th>
+
+                    </th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
                     <th *ngFor="let col of tableColumns">
                         {{ col.title }}
+                    </th>
+                    <th>
+
                     </th>
                 </tr>
             </tfoot>
@@ -24,6 +30,13 @@
                         <span *ngIf="col.outputTransform">
                             {{ col.outputTransform(row[col.key]) }}
                         </span>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button (click)="onSelect(row)" class="btn btn-info">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </div>
                     </td>
                 </tr>
             </tbody>

@@ -14,6 +14,7 @@ import { StatisticsComponent } from './page/statistics/statistics.component';
 import { CertificateComponent } from './page/certificate/certificate.component';
 import { DataTableComponent } from './common/data-table/data-table.component';
 import { LoginComponent } from './page/login/login.component';
+import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './page/login/login.component';
     StatisticsComponent,
     CertificateComponent,
     DataTableComponent,
-    LoginComponent
+    LoginComponent,
+    SubscriberEditComponent
   ],
   imports: [
     BrowserModule,

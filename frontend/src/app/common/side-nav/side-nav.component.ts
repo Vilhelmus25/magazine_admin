@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Subscriber } from 'src/app/model/subscriber';
+import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class SideNavComponent implements OnInit {
 
-  subscriber$: BehaviorSubject<Subscriber | null> = this.auth.currentSubscriberSubject$;
+  user$: BehaviorSubject<User | null> = this.auth.currentUserSubject$;
 
   constructor(
     private auth: AuthService,

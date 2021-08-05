@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Subscriber } from 'src/app/model/subscriber';
 import { ConfigService, ITableColumn } from 'src/app/service/config.service';
@@ -17,9 +18,14 @@ export class SubscribersComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private subscriberService: SubscriberService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
+  }
+
+  onSelectOne(subscriber: Subscriber): void {
+    this.router.navigate(['edit', subscriber._id]);
   }
 
 }

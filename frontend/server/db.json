@@ -11,8 +11,7 @@
       "licenced_seasons": 4,
       "seasons_left": 3,
       "amount": 8,
-      "colleague": "Csapóné Szécsényi Katalin",
-      "password": "test"
+      "colleague": "Csapóné Szécsényi Katalin"
     },
     {
       "_id": "dasdg3GERG4tenst",
@@ -49,6 +48,16 @@
       "licenced_seasons": 2,
       "amount": 3,
       "colleague": "Csapóné Szécsényi Katalin"
+    }
+  ],
+  "users": [
+    {
+      "_id": "gagarharfasefaGA541234125",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@gmail.com",
+      "active": true,
+      "password": "$2a$10$YdRTYCy5sElvpwkCmcOU4eP.cn5t2qiwiQmioW3sZZDVPpwhw5BL2"
     }
   ]
 }

@@ -1,7 +1,6 @@
 export class Subscriber {
     _id: string = "";
     name?: string = "";
-    email?: string = "";
     postalCode?: number = 0;
     city?: string = "";
     address?: string = "";
@@ -10,6 +9,4 @@ export class Subscriber {
     seasons_left?: number = 0;
     amount?: number = 0;
     colleague?: string = "";
-    password?: string = "";
-    accessToken?: string = "";
 }

@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class NavigationComponent implements OnInit {
 
-  subscriber$: BehaviorSubject<Subscriber | null> = this.auth.currentSubscriberSubject$;
+  subscriber$: BehaviorSubject<Subscriber | null> = this.auth.currentUserSubject$;
 
   constructor(
     private auth: AuthService,          // szeretnénk figyelni a service-ben lévő currentSubscriberSubject-et, hogy éppen milyen érték van-e benne, null vagy subscriber és az alapján kitenni a subscriber

@@ -5,6 +5,7 @@ import { CertificateComponent } from './page/certificate/certificate.component';
 import { HomeComponent } from './page/home/home.component';
 import { LoginComponent } from './page/login/login.component';
 import { StatisticsComponent } from './page/statistics/statistics.component';
+import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.component';
 import { SubscribersComponent } from './page/subscribers/subscribers.component';
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'subscribers',
     component: SubscribersComponent,
+  },
+  {
+    path: 'subscribers/edit/:id',
+    component: SubscriberEditComponent,
   },
   {
     path: 'archive',
