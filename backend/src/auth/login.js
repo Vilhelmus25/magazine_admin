@@ -16,8 +16,8 @@ const Users = [
 module.exports = (req, res) => {
     const { username, password } = req.body;
 
-    const user = Users.find( 
-        u => u.username === username && u.password === password 
+    const user = Users.find(
+        u => u.username === username && u.password === password
     );
 
     if (user) {

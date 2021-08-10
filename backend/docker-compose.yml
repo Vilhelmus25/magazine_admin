@@ -12,7 +12,6 @@ services:
         links: 
             - mongo
     mongo:
-        container_name: mongo
         image: mongo:latest
         volumes: 
             - ./data/db:/data/db

@@ -5,12 +5,12 @@ const jwt = require('jsonwebtoken');
 
 const Users = [
     {
-        username: 'admin',
+        email: 'admin',
         password: 'admin_pw',
         role: 'admin'
     },
     {
-        username: 'user',
+        email: 'user',
         password: 'user_pw',
         role: 'user'
     }
