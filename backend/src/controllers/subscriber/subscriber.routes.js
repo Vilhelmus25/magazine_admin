@@ -1,5 +1,6 @@
 const express = require("express");
-const controller = require('./controller');
+const subscriberModel = require('../../models/subscriber.model')
+const controller = require('../base/controller')(subscriberModel);
 
 const router = express.Router();
 

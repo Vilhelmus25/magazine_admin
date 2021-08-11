@@ -22,13 +22,13 @@ mongoose
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    .then( () => logger.info('MongoDB connection has been established successfully.'))
-    .catch( err => {
+    .then(() => logger.info('MongoDB connection has been established successfully.'))
+    .catch(err => {
         logger.error(err);
         process.exit();
     });
 
-app.use(morgan('combined', {stream: logger.stream}));
+app.use(morgan('combined', { stream: logger.stream }));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
@@ -37,11 +37,15 @@ app.post('/login', authHandler.login);
 app.post('/refresh', authHandler.refresh);
 app.post('/logout', authHandler.logout);
 
+app.use('/subscribers', authenticateJwt, adminOnly, require('./controllers/subscriber/subscriber.routes'));
+app.use('/certificate', authenticateJwt, adminOnly, require('./controllers/certificate/certificate.routes'));
+app.use('/archive', authenticateJwt, adminOnly, require('./controllers/archive/archive.routes'));
+app.use('/users', authenticateJwt, adminOnly, require('./controllers/user/user.routes'));
 app.use('/person', authenticateJwt, require('./controllers/person/person.routes'));
 app.use('/post', authenticateJwt, adminOnly, require('./controllers/post/post.routes'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.use( (err, req, res, next) => {
+app.use((err, req, res, next) => {
     res.status(err.statusCode);
     res.json({
         hasError: true,

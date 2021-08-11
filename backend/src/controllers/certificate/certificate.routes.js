@@ -1,5 +1,6 @@
 const express = require("express");
-const controller = require('./controller');
+const certificateModel = require('../../models/certificate.model')
+const controller = require('../base/controller')(certificateModel, ['subscriber']);
 
 const router = express.Router();
 

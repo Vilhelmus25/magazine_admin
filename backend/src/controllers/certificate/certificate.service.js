@@ -5,9 +5,9 @@ exports.create = certificateData => {
     return certificate.save();
 };
 
-exports.findAll = () => Certificate.find().populate('posts');
+exports.findAll = () => Certificate.find().populate('subscriber');
 
-exports.findOne = id => Certificate.findById(id).populate('posts');
+exports.findOne = id => Certificate.findById(id).populate('subscriber');
 
 exports.update = (id, updateData) => Certificate.findByIdAndUpdate(id, updateData, { new: true });
 

@@ -1,21 +1,43 @@
 const express = require('express');
 const createError = require('http-errors');
 
-const subscriberService = require('./service');
+const subscriberModel = require('../../models/subscriber.model')
+
+const checkModel = (model, body, next) => {
+    const validationErrors = new model(body).validateSync();
+    if (validationErrors) {
+        next(
+            new createError.BadRequest(
+                JSON.stringify({
+                    message: `Schema validation error`,
+                    error: validationErrors
+                })
+            )
+        );
+        return false;
+    }
+    return true;
+};
 
 // Create a new subscriber.
 exports.create = (req, res, next) => {
-    const { last_name, first_name, email } = req.body;
-    if (!last_name || !first_name || !email) {
-        return next(
-            new createError.BadRequest("Missing properties!")
-        );
+    if (!checkModel(subscriberModel, req.body, next)) {
+        return;
     }
 
+    const { name, postalCode, city, address, licence_id,
+        licenced_seasons, seasons_left, amount, colleague } = req.body;
+
     const newSubscriber = {
-        firstName: first_name,
-        lastName: last_name,
-        email: email
+        name,
+        postalCode,
+        city,
+        address,
+        licence_id,
+        licenced_seasons,
+        seasons_left,
+        amount,
+        colleague,
     };
 
     return subscriberService.create(newSubscriber)
@@ -28,8 +50,8 @@ exports.create = (req, res, next) => {
 
 exports.findAll = (req, res, next) => {
     return subscriberService.findAll()
-        .then(people => {
-            res.json(people);
+        .then(subscribers => {
+            res.json(subscribers);
         });
 };
 
@@ -45,18 +67,21 @@ exports.findOne = (req, res, next) => {
 
 exports.update = (req, res, next) => {
     const id = req.params.id;
-    const { first_name, last_name, email } = req.body;
-    if (!last_name || !first_name || !email) {
-        return next(
-            new createError.BadRequest("Missing properties!")
-        );
+    if (!checkModel(subscriberModel, req.body, next)) {
+        return;
     }
 
-    const update = {
-        firstName: first_name,
-        lastName: last_name,
-        email: email
-    };
+    // const update = {             // nehogy felülírjak olyat amit nem adok meg, de meglátjuk
+    //     name,
+    //     postalCode,
+    //     city,
+    //     address,
+    //     licence_id,
+    //     licenced_seasons,
+    //     seasons_left,
+    //     amount,
+    //     colleague,
+    // };
     return subscriberService.update(req.params.id, update)
         .then(subscriber => {
             res.json(subscriber);

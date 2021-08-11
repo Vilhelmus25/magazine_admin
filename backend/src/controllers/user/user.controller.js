@@ -1,7 +1,7 @@
 const express = require('express');
 const createError = require('http-errors');
 
-const userService = require('./service');
+const userService = require('./user.service');
 
 // Create a new user.
 exports.create = (req, res, next) => {

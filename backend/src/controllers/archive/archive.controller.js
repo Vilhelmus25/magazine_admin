@@ -1,21 +1,39 @@
 const express = require('express');
 const createError = require('http-errors');
 
-const archiveService = require('./service');
+const archiveModel = require('../../models/archive.model')
+
+const checkModel = (model, body, next) => {
+    const validationErrors = new model(body).validateSync();
+    if (validationErrors) {
+        next(
+            new createError.BadRequest(
+                JSON.stringify({
+                    message: `Schema validation error`,
+                    error: validationErrors
+                })
+            )
+        );
+        return false;
+    }
+    return true;
+};
 
 // Create a new archive.
 exports.create = (req, res, next) => {
-    const { last_name, first_name, email } = req.body;
-    if (!last_name || !first_name || !email) {
-        return next(
-            new createError.BadRequest("Missing properties!")
-        );
+    if (!checkModel(archiveModel, req.body, next)) {
+        return;
     }
 
     const newArchive = {
-        firstName: first_name,
-        lastName: last_name,
-        email: email
+        name,
+        postalCode,
+        city,
+        address,
+        licence_id,
+        licenced_seasons,
+        amount,
+        colleague,
     };
 
     return archiveService.create(newArchive)
@@ -28,8 +46,8 @@ exports.create = (req, res, next) => {
 
 exports.findAll = (req, res, next) => {
     return archiveService.findAll()
-        .then(people => {
-            res.json(people);
+        .then(archives => {
+            res.json(archives);
         });
 };
 
@@ -45,18 +63,10 @@ exports.findOne = (req, res, next) => {
 
 exports.update = (req, res, next) => {
     const id = req.params.id;
-    const { first_name, last_name, email } = req.body;
-    if (!last_name || !first_name || !email) {
-        return next(
-            new createError.BadRequest("Missing properties!")
-        );
+    if (!checkModel(archiveModel, req.body, next)) {
+        return;
     }
 
-    const update = {
-        firstName: first_name,
-        lastName: last_name,
-        email: email
-    };
     return archiveService.update(req.params.id, update)
         .then(archive => {
             res.json(archive);

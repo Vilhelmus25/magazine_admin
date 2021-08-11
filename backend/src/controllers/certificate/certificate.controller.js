@@ -1,21 +1,22 @@
 const express = require('express');
 const createError = require('http-errors');
 
-const certificateService = require('./service');
+const certificateModel = require('../../models/certificate.model')
 
 // Create a new certificate.
 exports.create = (req, res, next) => {
-    const { last_name, first_name, email } = req.body;
-    if (!last_name || !first_name || !email) {
-        return next(
-            new createError.BadRequest("Missing properties!")
-        );
+    if (!checkModel(certificateModel, req.body, next)) {
+        return;
     }
 
     const newCertificate = {
-        firstName: first_name,
-        lastName: last_name,
-        email: email
+        name,
+        taxNumber,
+        headquarters,
+        date,
+        legalReference,
+        director,
+        subscriber: subscriber || []
     };
 
     return certificateService.create(newCertificate)
@@ -28,8 +29,8 @@ exports.create = (req, res, next) => {
 
 exports.findAll = (req, res, next) => {
     return certificateService.findAll()
-        .then(people => {
-            res.json(people);
+        .then(certificates => {
+            res.json(certificates);
         });
 };
 
@@ -45,18 +46,10 @@ exports.findOne = (req, res, next) => {
 
 exports.update = (req, res, next) => {
     const id = req.params.id;
-    const { first_name, last_name, email } = req.body;
-    if (!last_name || !first_name || !email) {
-        return next(
-            new createError.BadRequest("Missing properties!")
-        );
+    if (!checkModel(certificateModel, req.body, next)) {
+        return;
     }
 
-    const update = {
-        firstName: first_name,
-        lastName: last_name,
-        email: email
-    };
     return certificateService.update(req.params.id, update)
         .then(certificate => {
             res.json(certificate);

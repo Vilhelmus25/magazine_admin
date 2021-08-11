@@ -1,5 +1,6 @@
 const express = require("express");
-const controller = require('./controller');
+const archiveModel = require('../../models/archive.model')
+const controller = require('../base/controller')(archiveModel);
 
 const router = express.Router();
 

@@ -37,6 +37,10 @@ const SubscriberSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    // time: {
+    //     type: Date,
+    //     default: new Date(),
+    // }
 }, {
     timeStamps: true
 });

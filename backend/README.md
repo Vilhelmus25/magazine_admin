@@ -84,3 +84,18 @@ mongoose
         useUnifiedTopology: true
     })
 ```
+
+
+### .env
+```
+Nagyon fontos az alábbi fájl megléte a gyökérben, különben nem lesz token, vagyis nem lesz auth, vagyis, betonfal.
+.env                ---> a fájl neve a gyökérben
+
+PORT=3000
+LOG_LEVEL_FILE=info
+LOG_LEVEL_CONSOLE=debug
+ACCESS_TOKEN_SECRET=very_secret_string_that_should_not_be_shared
+REFRESH_TOKEN_SECRET=another_secret_string_that_should_not_be_shared
+TOKEN_EXPIRY=20m
+
+```
