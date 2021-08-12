@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const mongoose = require('mongoose');
+const cors = require('./config/cors');
 mongoose.Promise = global.Promise;
 
 // Authenctication.
@@ -16,24 +17,29 @@ const authHandler = require('./auth/authHandler');
 
 const swaggerDocument = YAML.load('./docs/swager.yaml');
 
-const { username, password, host } = config.get('database');
+const { host } = config.get('database');
 mongoose
     .connect(`mongodb://${host}`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    .then(() => logger.info('MongoDB connection has been established successfully.'))
+    .then(() => {
+        // Data seeds
+        require('./seed/seeder');
+        logger.info('MongoDB connection has been established successfully.')
+    })
     .catch(err => {
         logger.error(err);
         process.exit();
     });
 
-app.use((req, res, next) => {                           // cors
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', '*');
-    res.setHeader('Access-Control-Allow-Methods', '*');
-    next();
-});
+// app.use((req, res, next) => {                           // cors
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Headers', '*');
+//     res.setHeader('Access-Control-Allow-Methods', '*');
+//     next();
+// });
+app.use(cors());
 
 app.use(morgan('combined', { stream: logger.stream }));
 app.use(express.static('public'));
@@ -51,6 +57,10 @@ app.use('/users', authenticateJwt, adminOnly, require('./controllers/user/user.r
 app.use('/person', authenticateJwt, require('./controllers/person/person.routes'));
 app.use('/post', authenticateJwt, adminOnly, require('./controllers/post/post.routes'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// app.use('/', async (req, res, next) => {
+//     const index = fsp.readFile( `../`)
+// });
+
 
 app.use((err, req, res, next) => {
     res.status(err.statusCode);

@@ -99,3 +99,19 @@ REFRESH_TOKEN_SECRET=another_secret_string_that_should_not_be_shared
 TOKEN_EXPIRY=20m
 
 ```
+
+### docker --watcher
+```
+Menete:
+npm i chokidar
+npm i concurrently -D                               // -D => az a devDependencies
+
+gyökérben new file :> watcher.js
+
+```
+
+
+### biztonságos mongoose
+```
+ npm i mongoose-bcrypt
+```
