@@ -1,7 +1,7 @@
 export class Certificate {
     _id: string = "";
     name: string = "";
-    taxNumber: string = "";
+    taxNumber: number = 0;
     headquarters: string = "";
     date: string = "";
     legalReference: string = "";

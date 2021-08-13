@@ -31,10 +31,13 @@
                             {{ col.outputTransform(row[col.key]) }}
                         </span>
                     </td>
-                    <td>
+                    <td *ngIf="row.seasons_left >= 1">
                         <div class="btn-group">
                             <button (click)="onSelect(row)" class="btn btn-info">
                                 <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn btn-danger" (click)="onDelete(row)">
+                                <i class="fas fa-trash-alt"></i>
                             </button>
                         </div>
                     </td>

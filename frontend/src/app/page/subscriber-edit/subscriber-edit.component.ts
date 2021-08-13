@@ -84,7 +84,7 @@ export class SubscriberEditComponent implements OnInit {
       }),
       new InputField({
         key: 'amount', label: 'Amount', type: 'number', value: (this.subscriber.amount as unknown as string),
-        validators: [Validators.required, Validators.minLength(1), Validators.maxLength(3), Validators.pattern(/^[1-9][0-9][0-9]*$/)], errorMessage: 'Amount is required and it must be between 1-999!'
+        validators: [Validators.required, Validators.minLength(1), Validators.maxLength(3), Validators.pattern(/^[1-9][0-9]*$/)], errorMessage: 'Amount is required and it must be between 1-999!'
       }),
       new InputField({ key: 'colleague', label: 'Colleague', type: 'text', value: (this.subscriber.colleague) })
     ];

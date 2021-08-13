@@ -1,20 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Archive } from '../model/archive';
+import { Subscriber } from '../model/subscriber';
 import { BaseService } from './base.service';
 import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ArchiveService extends BaseService<Archive> {
-
+export class ArchiveService {
+  entity = 'archive';
   constructor(
     public config: ConfigService,
     public http: HttpClient
   ) {
-    super(config, http);
-    this.entity = 'archive';
+  }
+
+  getAll(): Observable<Subscriber[]> {
+    return this.http.get<Subscriber[]>(`${this.config.apiUrl}${this.entity}`);
+  }
+
+  create(sub: Subscriber): Observable<Subscriber> {
+    return this.http.post<Subscriber>(`${this.config.apiUrl}${this.entity}`, sub);
   }
 
 }

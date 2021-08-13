@@ -29,7 +29,7 @@ export class SubscriberCreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.subscriber = new Subscriber();
+    this.subscriber = new Subscriber();
     this.setForm();
     this.showForm = true;
 
@@ -49,10 +49,10 @@ export class SubscriberCreateComponent implements OnInit {
         */
 
     this.fields = [
-      new InputField({ key: '_id', label: '', type: 'hidden', value: this.subscriber._id }),
+      // nem köll id, mert megsértődik
       new InputField({
         key: 'name', label: 'Name', type: 'text', value: this.subscriber.name,
-        validators: [Validators.required, Validators.minLength(5), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'Name is required.'
+        validators: [Validators.required, Validators.minLength(5), Validators.maxLength(70), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'Name is required and it must be from 5 to 70 characters long.'
       }),
       new InputField({
         key: 'postalCode', label: 'PostalCode', type: 'number', value: (this.subscriber.postalCode as unknown as string),
@@ -60,18 +60,30 @@ export class SubscriberCreateComponent implements OnInit {
       }),
       new InputField({
         key: 'city', label: 'City', type: 'text', value: (this.subscriber.city),
-        validators: [Validators.required, Validators.minLength(3), Validators.pattern(/^[A-Ű]{1}.*$/)], errorMessage: 'City is required.'
+        validators: [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(/^[A-Ű]{1}.\D*$/)], errorMessage: 'City is required, it must be from 3 to 30 characters long and must not contain digits.'
       }),
-      new InputField({ key: 'address', label: 'Address', type: 'text', value: (this.subscriber.address) }),
-      new InputField({ key: 'licence_id', label: 'Licence_Id', type: 'number', value: (this.subscriber.licence_id as unknown as string) }),
-      new InputField({ key: 'licnced_seasons', label: 'Licnced_Seasons', type: 'number', value: (this.subscriber.licenced_seasons as unknown as string) }),
-      new InputField({ key: 'seasons_left', label: 'Seasons_Left', type: 'number', value: (this.subscriber.seasons_left as unknown as string) }),
-      new InputField({ key: 'amount', label: 'Amount', type: 'number', value: (this.subscriber.amount as unknown as string) }),
+      new InputField({
+        key: 'address', label: 'Address', type: 'text', value: (this.subscriber.address),
+        validators: [Validators.required, Validators.minLength(5), Validators.maxLength(40), Validators.pattern(/./)], errorMessage: 'Address is required and it must be from 5 to 40 characters long.'
+      }),
+      new InputField({
+        key: 'licence_id', label: 'Licence_Id', type: 'text', value: (this.subscriber.licence_id),
+        validators: [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern(/[0-9]{8}/)], errorMessage: 'Licence_Id is required and it must be exactly 8 characters long.'
+      }),
+      new InputField({
+        key: 'licenced_seasons', label: 'Licenced_Seasons', type: 'number', value: (this.subscriber.licenced_seasons as unknown as string),
+        validators: [Validators.required, Validators.minLength(1), Validators.maxLength(2), Validators.pattern(/^[1-9][0-9]*$/)], errorMessage: 'Licenced_Seaesons is required and it must be between 1-99!'
+      }),
+      new InputField({
+        key: 'amount', label: 'Amount', type: 'number', value: (this.subscriber.amount as unknown as string),
+        validators: [Validators.required, Validators.minLength(1), Validators.maxLength(3), Validators.pattern(/^[1-9][0-9]*$/)], errorMessage: 'Amount is required and it must be between 1-999!'
+      }),
       new InputField({ key: 'colleague', label: 'Colleague', type: 'text', value: (this.subscriber.colleague) })
     ];
   }
 
   onSave(subscriber: Subscriber): void {
+    subscriber.seasons_left = subscriber.licenced_seasons;            // mert új felhasználóról van szó, ezért még annyi lesz hátra, amennyit felveszünk nekije
     this.subscriberService.create(subscriber).subscribe(
       subscriber => this.router.navigate(['/', 'subscribers'])
     )

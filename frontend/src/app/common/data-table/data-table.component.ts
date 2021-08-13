@@ -14,6 +14,7 @@ export class DataTableComponent<T extends { [propname: string]: any }> implement
   @Input() list$: Observable<T[]> | null = null;    // azért vagy null, mert az async kezeli a nullt, ha meg kap adatot, akkor bódogság is van.
 
   @Output() selectOne: EventEmitter<T> = new EventEmitter<T>();
+  @Output() deleteOne: EventEmitter<T> = new EventEmitter<T>();
 
   constructor(
     private config: ConfigService,
@@ -25,6 +26,9 @@ export class DataTableComponent<T extends { [propname: string]: any }> implement
 
   onSelect(entity: T): void {
     this.selectOne.emit(entity);
+  }
+  onDelete(entity: T): void {
+    this.deleteOne.emit(entity);
   }
 
 }

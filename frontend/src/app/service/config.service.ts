@@ -16,7 +16,7 @@ export class ConfigService {
   public readonly apiUrl: string = 'http://127.0.0.1:3000/';
 
   subscriberColumns: ITableColumn[] = [
-    { key: "_id", title: "#" },
+    // { key: "_id", title: "#" },
     { key: "name", title: "Name" },
     { key: "postalCode", title: "PostalCode" },
     { key: "city", title: "City" },
@@ -29,7 +29,7 @@ export class ConfigService {
   ];
 
   archiveColumns: ITableColumn[] = [
-    { key: "_id", title: "#" },
+    // { key: "_id", title: "#" },
     { key: "name", title: "Name" },
     { key: "postalCode", title: "PostalCode" },
     { key: "city", title: "City" },
