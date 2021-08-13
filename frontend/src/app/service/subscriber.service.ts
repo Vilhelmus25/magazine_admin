@@ -17,7 +17,7 @@ export class SubscriberService extends BaseService<Subscriber>{
     super(config, http);
     this.entity = 'subscribers';
   }
-  getAll(): Observable<Subscriber[]> {
-    return this.http.get<Subscriber[]>(`${this.config.apiUrl}${this.entity}?_expand=user`)
-  }
+  // getAll(): Observable<Subscriber[]> {
+  //   return this.http.get<Subscriber[]>(`${this.config.apiUrl}${this.entity}?_expand=user`)
+  // }
 }

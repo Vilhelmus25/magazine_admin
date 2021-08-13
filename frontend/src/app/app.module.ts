@@ -18,6 +18,7 @@ import { DataTableComponent } from './common/data-table/data-table.component';
 import { LoginComponent } from './page/login/login.component';
 import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.component';
 import { JwtInterceptorInterceptor } from './service/jwt-interceptor.interceptor';
+import { SubscriberCreateComponent } from './page/subscriber-create/subscriber-create.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { JwtInterceptorInterceptor } from './service/jwt-interceptor.interceptor
     CertificateComponent,
     DataTableComponent,
     LoginComponent,
-    SubscriberEditComponent
+    SubscriberEditComponent,
+    SubscriberCreateComponent
   ],
   imports: [
     BrowserModule,

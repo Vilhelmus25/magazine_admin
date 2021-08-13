@@ -4,7 +4,7 @@ export class Subscriber {
     postalCode: number = 0;
     city: string = "";
     address: string = "";
-    licence_id: number = 0;
+    licence_id: string = "";
     licenced_seasons: number = 0;
     seasons_left: number = 0;
     amount: number = 0;
