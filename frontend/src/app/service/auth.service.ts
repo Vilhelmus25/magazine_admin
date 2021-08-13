@@ -43,17 +43,17 @@ export class AuthService {
           response.user.accessToken = response.accessToken;
           this.currentUserSubject$.next(response.user);   // a feliratkozóknak terítem, tehát akik figyelik az auth service-emet, kapnak értesítést róla, hogy változott currentuserSubject értéke
           localStorage.currentUser = JSON.stringify(response.user);        // a böngésző localeStorage-éba taárolom, a user adatait. Ha frissítem a böngészőt, akkor meg tudom előbb nézni a localeStorage-t és nem kell újra lekérdezni, viszont, ezt majd egyszer törölni is kell.
-          return response.user;   // Subscribert ad vissza
+          return response.user;   // Usert ad vissza
         }
         return null;      // ha nem akkor null-t
-      })           // feliratkozik ennek a postnak a kimenetére, egy ilyet fog kapni, (subscriber és access token) és visszaad valami más adatot, vagyis pont a <Subscriber | null> típust
+      })           // feliratkozik ennek a postnak a kimenetére, egy ilyet fog kapni, (user és access token) és visszaad valami más adatot, vagyis pont a <User | null> típust
     );
   }
 
   logout(): void {
     this.lastToken = '';                              // mindent nullázunk
     this.currentUserSubject$.next(null);
-    localStorage.removeItem('currentSubscriber');
+    localStorage.removeItem('currentUser');
     this.router.navigate(['/', 'login']);             // visszairányít a login oldalra
   }
 

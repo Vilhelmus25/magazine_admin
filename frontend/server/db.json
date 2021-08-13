@@ -59,6 +59,13 @@
       "email": "johndoe@gmail.com",
       "active": true,
       "password": "$2a$10$YdRTYCy5sElvpwkCmcOU4eP.cn5t2qiwiQmioW3sZZDVPpwhw5BL2"
+    },
+    {
+      "_id": "oiuzapijsjisuitpoer523412671",
+      "firstName": "TaekWon",
+      "lastName": "Doe",
+      "email": "twd@gmail.com",
+      "active": true
     }
   ]
 }

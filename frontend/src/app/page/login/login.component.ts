@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   setPassword(): void {
-    this.userService.update({ _id: 'gagarharfasefaGA541234125', password: 'test' }).subscribe(
+    this.userService.update({ _id: 'oiuzapijsjisuitpoer523412671', password: 'test' }).subscribe(
       resp => console.log(resp)
     );
   }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http/';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http/';
 import { FormsModule } from '@angular/forms';
 
 import { AreusFormModule } from './areus-form/areus-form.module';
@@ -17,6 +17,7 @@ import { CertificateComponent } from './page/certificate/certificate.component';
 import { DataTableComponent } from './common/data-table/data-table.component';
 import { LoginComponent } from './page/login/login.component';
 import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.component';
+import { JwtInterceptorInterceptor } from './service/jwt-interceptor.interceptor';
 
 
 @NgModule({
@@ -40,7 +41,12 @@ import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.
     FormsModule,
     AreusFormModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptorInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
