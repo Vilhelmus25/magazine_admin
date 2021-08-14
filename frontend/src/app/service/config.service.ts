@@ -17,6 +17,7 @@ export class ConfigService {
 
   subscriberColumns: ITableColumn[] = [
     // { key: "_id", title: "#" },
+    { key: "date", title: "Date" },
     { key: "name", title: "Name" },
     { key: "postalCode", title: "PostalCode" },
     { key: "city", title: "City" },
@@ -30,6 +31,7 @@ export class ConfigService {
 
   archiveColumns: ITableColumn[] = [
     // { key: "_id", title: "#" },
+    { key: "date", title: "Date" },
     { key: "name", title: "Name" },
     { key: "postalCode", title: "PostalCode" },
     { key: "city", title: "City" },

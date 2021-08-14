@@ -25,4 +25,9 @@ export class ArchiveService {
     return this.http.post<Subscriber>(`${this.config.apiUrl}${this.entity}`, sub);
   }
 
+
+  remove(_id: string): Observable<Subscriber> {
+    return this.http.delete<Subscriber>(`${this.config.apiUrl}${this.entity}/${_id}`);
+  }
+
 }

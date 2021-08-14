@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Colleague } from 'src/app/model/colleague';
 import { Subscriber } from 'src/app/model/subscriber';
 import { ArchiveService } from 'src/app/service/archive.service';
+import { ColleagueService } from 'src/app/service/colleague.service';
 import { ConfigService, ITableColumn } from 'src/app/service/config.service';
 import { SubscriberService } from 'src/app/service/subscriber.service';
 
@@ -21,10 +23,10 @@ export class SubscribersComponent implements OnInit {
     private subscriberService: SubscriberService,
     private archiveService: ArchiveService,
     private router: Router,
+
   ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onSelectOne(subscriber: Subscriber): void {
     this.router.navigate(['subscribers/edit/', subscriber._id]);

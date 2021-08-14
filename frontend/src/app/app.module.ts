@@ -19,6 +19,7 @@ import { LoginComponent } from './page/login/login.component';
 import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.component';
 import { JwtInterceptorInterceptor } from './service/jwt-interceptor.interceptor';
 import { SubscriberCreateComponent } from './page/subscriber-create/subscriber-create.component';
+import { ColleagueComponent } from './page/colleague/colleague.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SubscriberCreateComponent } from './page/subscriber-create/subscriber-c
     DataTableComponent,
     LoginComponent,
     SubscriberEditComponent,
-    SubscriberCreateComponent
+    SubscriberCreateComponent,
+    ColleagueComponent
   ],
   imports: [
     BrowserModule,

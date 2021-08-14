@@ -25,5 +25,10 @@ export class ArchiveComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDeleteOne(subscriber: Subscriber): void {
+    this.archiveService.remove(subscriber._id).subscribe(() => {
+      this.list$ = this.archiveService.getAll();
+    });
+  }
 
 }

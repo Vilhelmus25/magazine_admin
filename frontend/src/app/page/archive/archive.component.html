@@ -4,5 +4,6 @@
         <i class="fas fa-table me-1"></i>
         List of Archive
     </div>
-    <app-data-table [tableColumns]="tableColumns" [list$]="list$"></app-data-table>
+    <!-- <app-data-table [tableColumns]="tableColumns" [list$]="list$" (deleteOne)="onDeleteOne($event)"></app-data-table> -->
+    <app-data-table [tableColumns]="tableColumns" [list$]="list$" (deleteOne)="onDeleteOne($event)"></app-data-table>
 </div>
