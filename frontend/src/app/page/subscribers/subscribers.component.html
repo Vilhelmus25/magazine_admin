@@ -13,5 +13,5 @@
         List of Subscribers
     </div>
     <app-data-table [tableColumns]="tableColumns" [list$]="list$" (selectOne)="onSelectOne($event)"
-        (deleteOne)="onDeleteOne($event)"></app-data-table>
+        (deleteOne)="onDeleteOne($event)" (printCertificate)="onPrintCertificate($event)"></app-data-table>
 </div>

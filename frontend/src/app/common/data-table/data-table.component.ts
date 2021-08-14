@@ -15,6 +15,7 @@ export class DataTableComponent<T extends { [propname: string]: any }> implement
 
   @Output() selectOne: EventEmitter<T> = new EventEmitter<T>();
   @Output() deleteOne: EventEmitter<T> = new EventEmitter<T>();
+  @Output() printCertificate: EventEmitter<T> = new EventEmitter<T>();
 
   constructor(
     private config: ConfigService,
@@ -29,6 +30,9 @@ export class DataTableComponent<T extends { [propname: string]: any }> implement
   }
   onDelete(entity: T): void {
     this.deleteOne.emit(entity);
+  }
+  onPrintCertificate(entity: T): void {
+    this.printCertificate.emit(entity);
   }
 
 }

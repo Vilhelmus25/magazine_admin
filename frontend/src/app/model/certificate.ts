@@ -1,3 +1,5 @@
+import { Subscriber } from "./subscriber";
+
 export class Certificate {
     _id: string = "";
     name: string = "";
@@ -6,4 +8,5 @@ export class Certificate {
     date: string = "";
     legalReference: string = "";
     director: string = "";
+    subscriber: Subscriber = new Subscriber();
 }

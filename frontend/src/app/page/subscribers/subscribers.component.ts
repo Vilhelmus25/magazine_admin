@@ -60,4 +60,8 @@ export class SubscribersComponent implements OnInit {
 
   }
 
+  onPrintCertificate(subscriber: Subscriber): void {
+    this.router.navigate(['certificate/', subscriber]);
+  }
+
 }
