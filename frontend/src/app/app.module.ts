@@ -23,6 +23,8 @@ import { ColleagueCreateComponent } from './page/colleague-create/colleague-crea
 import { ColleagueEditComponent } from './page/colleague-edit/colleague-edit.component';
 import { CertificateEditComponent } from './page/certificate-edit/certificate-edit.component';
 import { CertificatePrintComponent } from './page/certificate-print/certificate-print.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { CertificatePrintComponent } from './page/certificate-print/certificate-
     HttpClientModule,
     FormsModule,
     AreusFormModule,
+    MDBBootstrapModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [
     {

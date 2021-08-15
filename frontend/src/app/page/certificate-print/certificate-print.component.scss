@@ -13,14 +13,14 @@
 }
 
 @media print {
-    .printPreview, body * {
+    .printPreview, .print-button-body, body * {
       visibility: hidden;
     }
     #printableArea, #printableArea * {
       visibility: visible;
     }
     #printableArea {
-      position: absolute;
+      position: relative;
       left: 100;
       top: 100;
     }
