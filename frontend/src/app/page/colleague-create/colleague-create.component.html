@@ -1,0 +1,6 @@
+<div class="row">
+    <h3>Create new Colleague</h3>
+    <div class="col-6 offset-3">
+        <app-areus-form *ngIf="showForm" [fieldList]="fields" (submitted)="onSave($event)"></app-areus-form>
+    </div>
+</div>

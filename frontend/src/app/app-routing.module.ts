@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ArchiveComponent } from './page/archive/archive.component';
 import { CertificateComponent } from './page/certificate/certificate.component';
+import { ColleagueCreateComponent } from './page/colleague-create/colleague-create.component';
+import { ColleagueEditComponent } from './page/colleague-edit/colleague-edit.component';
 import { ColleagueComponent } from './page/colleague/colleague.component';
 import { HomeComponent } from './page/home/home.component';
 import { LoginComponent } from './page/login/login.component';
@@ -42,6 +44,14 @@ const routes: Routes = [
   {
     path: 'colleague',
     component: ColleagueComponent,
+  },
+  {
+    path: 'colleague/create',
+    component: ColleagueCreateComponent,
+  },
+  {
+    path: 'colleague/edit/:id',
+    component: ColleagueEditComponent,
   },
   {
     path: 'login',

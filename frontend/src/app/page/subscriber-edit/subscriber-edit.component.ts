@@ -27,6 +27,7 @@ export class SubscriberEditComponent implements OnInit {
   showForm: boolean = false;
   colleagueNames$: Observable<Colleague[]> = this.colleagueService.getAll();
   colleagueNames: Colleague[] = [];
+  options: { value: string, label: string }[] = [];
 
   constructor(
     private subscriberService: SubscriberService,
@@ -68,6 +69,10 @@ export class SubscriberEditComponent implements OnInit {
     //   console.log("");
     // }, 500);
 
+    for (const item of this.colleagueNames) {
+      this.options.push({ value: `${item.name}`, label: `${item.name}` })
+    }
+
     this.fields = [
       new InputField({ key: '_id', label: '', type: 'hidden', value: this.subscriber._id }),
       new SelectField({
@@ -107,11 +112,12 @@ export class SubscriberEditComponent implements OnInit {
       }),
       new SelectField({
         key: 'colleague', label: 'Colleague', type: '', value: '', controlType: 'select', options: [
-          { value: `${this.colleagueNames[0].name}`, label: `${this.colleagueNames[0].name}` },
-          { value: `${this.colleagueNames[1].name}`, label: `${this.colleagueNames[1].name}` },
-          { value: `${this.colleagueNames[2].name}`, label: `${this.colleagueNames[2].name}` },
-          { value: `${this.colleagueNames[3].name}`, label: `${this.colleagueNames[3].name}` },
-          { value: `${this.colleagueNames[4].name}`, label: `${this.colleagueNames[4].name}` },
+          ...this.options
+          // { value: `${this.colleagueNames[0].name}`, label: `${this.colleagueNames[0].name}` },
+          // { value: `${this.colleagueNames[1].name}`, label: `${this.colleagueNames[1].name}` },
+          // { value: `${this.colleagueNames[2].name}`, label: `${this.colleagueNames[2].name}` },
+          // { value: `${this.colleagueNames[3].name}`, label: `${this.colleagueNames[3].name}` },
+          // { value: `${this.colleagueNames[4].name}`, label: `${this.colleagueNames[4].name}` },
         ]
       }),
     ];

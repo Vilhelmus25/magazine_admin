@@ -20,6 +20,8 @@ import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.
 import { JwtInterceptorInterceptor } from './service/jwt-interceptor.interceptor';
 import { SubscriberCreateComponent } from './page/subscriber-create/subscriber-create.component';
 import { ColleagueComponent } from './page/colleague/colleague.component';
+import { ColleagueCreateComponent } from './page/colleague-create/colleague-create.component';
+import { ColleagueEditComponent } from './page/colleague-edit/colleague-edit.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { ColleagueComponent } from './page/colleague/colleague.component';
     LoginComponent,
     SubscriberEditComponent,
     SubscriberCreateComponent,
-    ColleagueComponent
+    ColleagueComponent,
+    ColleagueCreateComponent,
+    ColleagueEditComponent
   ],
   imports: [
     BrowserModule,

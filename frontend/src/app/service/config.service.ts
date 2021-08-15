@@ -42,6 +42,16 @@ export class ConfigService {
     { key: "colleague", title: "Colleague" },
   ];
 
+  colleagueColumns: ITableColumn[] = [
+    // { key: "_id", title: "#" },
+    { key: "name", title: "Name" },
+    { key: "birth_date", title: "BirthDate" },
+    { key: "postalCode", title: "PostalCode" },
+    { key: "city", title: "City" },
+    { key: "address", title: "Address" },
+    { key: "salary", title: "Salary" },
+  ];
+
   constructor() { }
 
   //static

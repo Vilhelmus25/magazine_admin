@@ -1,1 +1,14 @@
-<p>colleague works!</p>
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Colleagues</h1>
+    <div class="btn-group">
+        <button class="btn btn-success" routerLink="/colleague/create">
+            Create new Colleague
+        </button>
+    </div>
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        List of Colleagues
+    </div>
+    <app-data-table [tableColumns]="tableColumns" [list$]="list$" (selectOne)="onSelectOne($event)"
+        (deleteOne)="onDeleteOne($event)"></app-data-table>
+</div>
