@@ -35,7 +35,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/scripts.js"
+              "src/assets/js/scripts.js",
+              "src/assets/js/chart-bar-demo.js"
             ]
           },
           "configurations": {

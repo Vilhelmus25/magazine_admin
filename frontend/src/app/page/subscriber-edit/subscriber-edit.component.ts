@@ -111,7 +111,7 @@ export class SubscriberEditComponent implements OnInit {
         validators: [Validators.required, Validators.minLength(1), Validators.maxLength(3), Validators.pattern(/^[1-9][0-9]*$/)], errorMessage: 'Amount is required and it must be between 1-999!'
       }),
       new SelectField({
-        key: 'colleague', label: 'Colleague', type: '', value: '', controlType: 'select', options: [
+        key: 'colleague', label: 'Colleague', type: '', value: (this.subscriber.colleague), controlType: 'select', options: [
           ...this.options
           // { value: `${this.colleagueNames[0].name}`, label: `${this.colleagueNames[0].name}` },
           // { value: `${this.colleagueNames[1].name}`, label: `${this.colleagueNames[1].name}` },
