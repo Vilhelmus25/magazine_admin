@@ -1,11 +1,12 @@
 <div *ngIf="(user$ | async)" id="layoutSidenav_nav">
-    <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+    <nav *ngFor="let certificateID of certificateList$ | async" class="sb-sidenav accordion sb-sidenav-light"
+        id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <div class="sb-sidenav-menu-heading">Core</div>
+                <div class=" sb-sidenav-menu-heading">Welcome</div>
                 <a class="nav-link" routerLink="/">
                     <div class="sb-nav-link-icon"><i class="fa fa-home"></i></div>
-                    Magazine
+                    Home
                 </a>
                 <!-- <div class="sb-sidenav-menu-heading">Interface</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
@@ -73,9 +74,10 @@
                     Colleagues
                 </a>
                 <div class="sb-sidenav-menu-heading">Utils</div>
-                <a class="nav-link" routerLink="/certificate">
-                    <div class="sb-nav-link-icon"><i class="fa fa-certificate"></i></div>
-                    Certificate
+                <a class="nav-link" [routerLink]="['/certificate/edit/',certificateID._id]">
+                    <div class=" sb-nav-link-icon"><i class="fa fa-stamp"></i>
+                    </div>
+                    Certificate-Edit
                 </a>
                 <a class="nav-link" routerLink="/statistics">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -85,7 +87,7 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
-            Start Bootstrap
+            Admin
         </div>
     </nav>
 </div>

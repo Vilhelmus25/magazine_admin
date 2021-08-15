@@ -1,0 +1,27 @@
+.cardLogo{
+    width: 150px;
+    height: 150px;
+    margin:auto;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.print-button-body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+@media print {
+    .printPreview, body * {
+      visibility: hidden;
+    }
+    #printableArea, #printableArea * {
+      visibility: visible;
+    }
+    #printableArea {
+      position: absolute;
+      left: 100;
+      top: 100;
+    }
+  }

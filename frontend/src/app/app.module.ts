@@ -13,7 +13,6 @@ import { HomeComponent } from './page/home/home.component';
 import { SubscribersComponent } from './page/subscribers/subscribers.component';
 import { ArchiveComponent } from './page/archive/archive.component';
 import { StatisticsComponent } from './page/statistics/statistics.component';
-import { CertificateComponent } from './page/certificate/certificate.component';
 import { DataTableComponent } from './common/data-table/data-table.component';
 import { LoginComponent } from './page/login/login.component';
 import { SubscriberEditComponent } from './page/subscriber-edit/subscriber-edit.component';
@@ -22,6 +21,8 @@ import { SubscriberCreateComponent } from './page/subscriber-create/subscriber-c
 import { ColleagueComponent } from './page/colleague/colleague.component';
 import { ColleagueCreateComponent } from './page/colleague-create/colleague-create.component';
 import { ColleagueEditComponent } from './page/colleague-edit/colleague-edit.component';
+import { CertificateEditComponent } from './page/certificate-edit/certificate-edit.component';
+import { CertificatePrintComponent } from './page/certificate-print/certificate-print.component';
 
 
 @NgModule({
@@ -33,14 +34,15 @@ import { ColleagueEditComponent } from './page/colleague-edit/colleague-edit.com
     SubscribersComponent,
     ArchiveComponent,
     StatisticsComponent,
-    CertificateComponent,
     DataTableComponent,
     LoginComponent,
     SubscriberEditComponent,
     SubscriberCreateComponent,
     ColleagueComponent,
     ColleagueCreateComponent,
-    ColleagueEditComponent
+    ColleagueEditComponent,
+    CertificateEditComponent,
+    CertificatePrintComponent
   ],
   imports: [
     BrowserModule,

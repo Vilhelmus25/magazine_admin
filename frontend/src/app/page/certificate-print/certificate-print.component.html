@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-12">
+        <div *ngIf="showForm" class="card" id="printableArea">
+            <img src="/assets/images/logo.png" class="cardLogo py-2" alt="logo">
+            <div class="date px-3 py-3">
+                <h4>Date of Contract Binding</h4>
+                <span *ngFor="let certificate of certificate$ | async"> {{ certificate.date }}</span>
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h5 class="company-title">Company's Credentials</h5>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="subscriber-title">Subscriber's Credentials</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <ul *ngFor="let certificate of certificate$ | async" class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <h6>Company's name:</h6> <span> {{ certificate.name }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <h6>Company's Tax Number:</h6> <span> {{ certificate.taxNumber }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <h6>Company Headquarters:</h6> <span> {{ certificate.headquarters }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <h6>Legal Reference:</h6> <span> {{ certificate.legalReference }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <h6>Company Director's Name:</h6> <span> {{ certificate.director }}</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <h6>Subscriber's Name:</h6> <span> {{ subscriber.name }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <h6>Date of Subscriber's Registration:</h6> <span> {{ subscriber.date }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <h6>Subscriber's Address:</h6> <span> {{ subscriber.postalCode }} {{ subscriber.city }}, {{
+                                subscriber.address }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <h6>Licenced Seasons</h6> <span> {{ subscriber.licenced_seasons }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <h6>Ordered Amount</h6> <span> {{ subscriber.amount }} pcs</span>
+                        </li>
+                        <li class="list-group-item pt-4">
+                            <h5>Subscriber's sign:</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body print-button-body">
+            <button (click)="printPage()" class="btn-print btn-warning col-12">
+                <h4 class="printCertificate">Print Certificate</h4>
+                <i class="fas fa-print print-icon"></i>
+            </button>
+        </div>
+
+
+    </div>
+</div>

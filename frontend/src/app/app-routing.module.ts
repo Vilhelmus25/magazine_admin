@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { ArchiveComponent } from './page/archive/archive.component';
-import { CertificateComponent } from './page/certificate/certificate.component';
+import { CertificateEditComponent } from './page/certificate-edit/certificate-edit.component';
+import { CertificatePrintComponent } from './page/certificate-print/certificate-print.component';
 import { ColleagueCreateComponent } from './page/colleague-create/colleague-create.component';
 import { ColleagueEditComponent } from './page/colleague-edit/colleague-edit.component';
 import { ColleagueComponent } from './page/colleague/colleague.component';
@@ -16,6 +18,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'subscribers',
@@ -34,14 +40,6 @@ const routes: Routes = [
     component: ArchiveComponent,
   },
   {
-    path: 'certificate',
-    component: CertificateComponent,
-  },
-  {
-    path: 'statistics',
-    component: StatisticsComponent,
-  },
-  {
     path: 'colleague',
     component: ColleagueComponent,
   },
@@ -54,8 +52,16 @@ const routes: Routes = [
     component: ColleagueEditComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: 'certificate/edit/:id',
+    component: CertificateEditComponent,
+  },
+  {
+    path: 'certificate/print/:id',
+    component: CertificatePrintComponent,
+  },
+  {
+    path: 'statistics',
+    component: StatisticsComponent,
   },
   {
     path: '**',

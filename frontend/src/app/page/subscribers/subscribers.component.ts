@@ -62,8 +62,8 @@ export class SubscribersComponent implements OnInit {
 
   }
 
-  onPrintCertificate(subscriber: Subscriber): void {
-    this.router.navigate(['certificate/', subscriber]);
+  onPrintCertificate(subscriber: Subscriber): void {          // EZ ITT NEM JÓ MÉG, A CERTIFICATE ID-vel KÉNE NAVIGÁLNI, UGYANAKKOR MEG KÉNE KAPNI A SUBSCRIBERT
+    this.router.navigate(['certificate/print/', subscriber._id]);
   }
 
 }
