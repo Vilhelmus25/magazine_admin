@@ -42,7 +42,7 @@ export class CertificateEditComponent implements OnInit {
   }
 
   setForm(): void {
-    console.log(this.certificate);
+
     this.fields = [
       new InputField({ key: '_id', label: '', type: 'hidden', value: this.certificate._id }),
       new InputField({
