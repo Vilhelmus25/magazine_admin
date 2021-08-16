@@ -17,6 +17,7 @@ export class StatisticsComponent implements OnInit {
   counter2019: string[] = [];
   counter2020: string[] = [];
   counter2021: string[] = [];
+  clickCounter: number = 0;
 
 
   // chart entities
@@ -118,6 +119,8 @@ export class StatisticsComponent implements OnInit {
   }
 
   displayCharts(): void {
+    this.clickCounter += 1;
+    this.subscriberCounterFunction();
     this.chartDatasets2019 = [
       {
         data: [
@@ -250,7 +253,5 @@ export class StatisticsComponent implements OnInit {
     ];
 
   }
-
-
 
 }

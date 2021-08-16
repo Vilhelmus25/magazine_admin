@@ -1,7 +1,7 @@
 <div class="container-fluid px-4">
     <h2 class="d-flex justify-content-center py-2">Number of Subscribers</h2>
     <div class="btn-group w-100 col-12 py-2">
-        <button class="btn btn-info" (click)="subscriberCounterFunction(); displayCharts()">
+        <button *ngIf="clickCounter < 1" class="btn btn-info" (click)="displayCharts()">
             <h5>RefreshAll <i class="fas fa-sync-alt"></i></h5>
 
         </button>
