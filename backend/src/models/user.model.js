@@ -22,13 +22,3 @@ const UserSchema = mongoose.Schema({
 UserSchema.plugin(mongooseBcrypt);
 
 module.exports = mongoose.model('User', UserSchema);
-
-
-// _id: string = "";
-// firstname?: string = "";
-// lastname?: string = "";
-// email?: string = "";
-// active?: boolean = true;
-// password?: string = "";
-// accessToken?: string = "";
-// role?: string = "";

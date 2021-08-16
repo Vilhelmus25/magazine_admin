@@ -35,12 +35,3 @@ const CertificateSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('Certificate', CertificateSchema);
-
-
-// _id: string = "";
-// name: string = "";
-// taxNumber: string = "";
-// headquarters: string = "";
-// date: string = "";
-// legalReference: string = "";
-// director: string = "";

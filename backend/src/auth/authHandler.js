@@ -4,7 +4,7 @@ const UserModel = require('../models/user.model');
 // Példa: https://www.npmjs.com/package/mongoose-bcrypt
 
 
-// ITT TÁPLÁLJUK BELE A USEREKET, MAJD A VÉGÉN ITT ÁLLÍTSUNK VALAMI NORMÁLISAT, CSAK 1 SZINTNYI KOMMENTET KELL KIVENNI
+// ITT TÁPLÁLJUK BELE A USEREKET, AMIKOR A DATA/DB ÜRES
 
 // (async () => {
 //     // const users = UserModel.find();
@@ -15,20 +15,6 @@ const UserModel = require('../models/user.model');
 //     await user.save();
 //     // }
 // })();
-
-
-// const Users = [
-//     {
-//         email: 'admin',
-//         password: 'admin_pw',
-//         role: 'admin'
-//     },
-//     {
-//         email: 'user',
-//         password: 'user_pw',
-//         role: 'user'
-//     }
-// ];
 
 const refreshTokens = [];
 
