@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const SubscriberSchema = mongoose.Schema({
-    date: {
+const ColleagueSchema = mongoose.Schema({
+    name: {
         type: String,
         required: true
     },
-    name: {
+    birth_date: {
         type: String,
         required: true
     },
@@ -21,23 +21,7 @@ const SubscriberSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    licence_id: {
-        type: String,
-        required: true
-    },
-    licenced_seasons: {
-        type: Number,
-        required: true
-    },
-    seasons_left: {
-        type: Number,
-        required: true
-    },
-    amount: {
-        type: Number,
-        required: true
-    },
-    colleague: {
+    salary: {
         type: String,
         required: true
     },
@@ -49,7 +33,7 @@ const SubscriberSchema = mongoose.Schema({
     timeStamps: true
 });
 
-module.exports = mongoose.model('Subscriber', SubscriberSchema);
+module.exports = mongoose.model('Colleague', ColleagueSchema);
 
 
 // _id: string = "";

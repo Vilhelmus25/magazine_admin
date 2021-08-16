@@ -52,6 +52,7 @@ app.post('/logout', authHandler.logout);
 
 app.use('/subscribers', authenticateJwt, adminOnly, require('./controllers/subscriber/subscriber.routes'));
 app.use('/certificate', authenticateJwt, adminOnly, require('./controllers/certificate/certificate.routes'));
+app.use('/colleague', authenticateJwt, adminOnly, require('./controllers/colleague/colleague.routes'));
 app.use('/archive', authenticateJwt, adminOnly, require('./controllers/archive/archive.routes'));
 app.use('/users', authenticateJwt, adminOnly, require('./controllers/user/user.routes'));
 app.use('/person', authenticateJwt, require('./controllers/person/person.routes'));

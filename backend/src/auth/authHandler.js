@@ -3,14 +3,17 @@ const UserModel = require('../models/user.model');
 // Biztonságosabb megoldás, az adatbázis használata.
 // Példa: https://www.npmjs.com/package/mongoose-bcrypt
 
+
+// ITT TÁPLÁLJUK BELE A USEREKET, MAJD A VÉGÉN ITT ÁLLÍTSUNK VALAMI NORMÁLISAT, CSAK 1 SZINTNYI KOMMENTET KELL KIVENNI
+
 // (async () => {
-//     const users = UserModel.find();
-//     if (!users || users.length < 1) {
-//         const admin = new UserModel({ name: 'Admin', email: 'admin@gmail.com', role: '2', password: 'admin_pw' });
-//         const user = new UserModel({ name: 'User', email: 'user@gmail.com', role: 1, password: 'user_pw' });
-//         await admin.save();
-//         await user.save();
-//     }
+//     // const users = UserModel.find();
+//     // if (!users || users.length < 1) {
+//     const admin = new UserModel({ name: 'Admin', email: 'admin@gmail.com', role: '2', password: 'admin_pw' });
+//     const user = new UserModel({ name: 'User', email: 'user@gmail.com', role: 1, password: 'user_pw' });
+//     await admin.save();
+//     await user.save();
+//     // }
 // })();
 
 

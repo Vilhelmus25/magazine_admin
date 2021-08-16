@@ -5,9 +5,9 @@ exports.create = archiveData => {
     return archive.save();
 };
 
-exports.findAll = () => Archive.find().populate('posts');
+exports.findAll = () => Archive.find().populate();
 
-exports.findOne = id => Archive.findById(id).populate('posts');
+exports.findOne = id => Archive.findById(id).populate();
 
 exports.update = (id, updateData) => Archive.findByIdAndUpdate(id, updateData, { new: true });
 

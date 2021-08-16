@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const ArchiveSchema = mongoose.Schema({
+    date: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true
@@ -18,7 +22,7 @@ const ArchiveSchema = mongoose.Schema({
         required: true
     },
     licence_id: {
-        type: Number,
+        type: String,
         required: true
     },
     licenced_seasons: {

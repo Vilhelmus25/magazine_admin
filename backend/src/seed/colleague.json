@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Jack Lumber",
+        "birth_date": "1974-03-15",
+        "postalCode": 6634,
+        "city": "Pécs",
+        "address": "91 Pascal Trail",
+        "salary": "600$/month"
+    },
+    {
+        "name": "Sharon Stanford",
+        "birth_date": "1989-05-05",
+        "postalCode": 3218,
+        "city": "Érd",
+        "address": "73 Crop Circle",
+        "salary": "500$/month"
+    },
+    {
+        "name": "Aaron Hammersmith",
+        "birth_date": "1985-10-21",
+        "postalCode": 7345,
+        "city": "Gyomaendrőd",
+        "address": "12 Washington Street",
+        "salary": "550$/month"
+    },
+    {
+        "name": "Linda Oppenheimer",
+        "birth_date": "1979-08-13",
+        "postalCode": 3370,
+        "city": "Győr",
+        "address": "50 Wiener Strasse",
+        "salary": "575$/month"
+    },
+    {
+        "name": "John Carpenter",
+        "birth_date": "1969-07-19",
+        "postalCode": 2082,
+        "city": "Szeged",
+        "address": "93 Teddy Hill",
+        "salary": "650$/month"
+    }
+]

@@ -14,7 +14,7 @@ const CertificateSchema = mongoose.Schema({
         required: true
     },
     date: {
-        type: Date,
+        type: String,
         required: true
     },
     legalReference: {
@@ -28,7 +28,7 @@ const CertificateSchema = mongoose.Schema({
     subscriber: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Subscriber',
-        required: true
+        required: false
     },
 }, {
     timeStamps: true

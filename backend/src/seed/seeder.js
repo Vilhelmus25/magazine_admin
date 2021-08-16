@@ -1,7 +1,7 @@
 const fsp = require('fs').promises;
 const Subscriber = require('../models/subscriber.model');
-// const Race = require('../models/race.model');
-// const Customer = require('../models/customer.model');
+const Colleague = require('../models/colleague.model');
+const Certificate = require('../models/certificate.model');
 // const Service = require('../models/service.model');
 
 const seedCollection = async (model, fileName) => {
@@ -31,7 +31,8 @@ const seedCollection = async (model, fileName) => {
     }
 
     seedCollection(Subscriber, 'subscriber');
-    // seedCollection(Customer, 'customers');
+    seedCollection(Colleague, 'colleague');
+    seedCollection(Certificate, 'certificate');
     // seedCollection(Race, 'races');
     // seedCollection(Service, 'services');
 })();
