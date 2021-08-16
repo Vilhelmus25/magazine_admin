@@ -1,25 +1,25 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: Sample Blog API
-  description: A sample blog API to illustrate REST API concepts
+  title: Magazine
+  description: An API for Magazine
 servers:
   - url: http://localhost:3000
 paths:
-  /person:
+  /subscribers:
     get:
-      description: Returns a list of persons
+      description: Returns a list of subscribers
       security:
         - bearerAuth: []
       responses:
         '200':
-          description: List of persons returned successfully
+          description: List of subscribers returned successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Person'
+                  $ref: '#/components/schemas/Subscriber'
         '500':
           description: Internal server error
           content:
@@ -27,7 +27,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      description: Creates a new person
+      description: Creates a new subscriber
       security:
         - bearerAuth: []
       requestBody:
@@ -35,14 +35,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Person'
+              $ref: '#/components/schemas/Subscriber'
       responses:
         '201':
-          description: Person has been created successfully
+          description: Subscriber has been created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Person'
+                $ref: '#/components/schemas/Subscriber'
         '400':
           description: Invalid request
           content:
@@ -55,26 +55,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /person/{person_id}:
+  /subscribers/{_id}:
     get:
-      description: Returns the person with the given ID
+      description: Returns the subscriber with the given ID
       security:
         - bearerAuth: []
       parameters:
-        - name: person_id
+        - name: _id
           in: path
           required: true
           schema:
             type: string
       responses:
         '200':
-          description: Person data returned successfully
+          description: Subscriber data returned successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Person'
+                $ref: '#/components/schemas/Subscriber'
         '404':
-          description: Person with the give ID was not found
+          description: Subscriber with the given ID was not found
           content:
             application/json:
               schema:
@@ -85,23 +85,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-    put:
-      description: Update a person
+    patch:
+      description: Update a subscriber
       security:
         - bearerAuth: []
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          schema:
+            type: string  
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Person'
+              $ref: '#/components/schemas/Subscriber'
       responses:
         '201':
-          description: Person has been updated successfully
+          description: Subscriber has been updated successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Person'
+                $ref: '#/components/schemas/Subscriber'
         '400':
           description: Invalid request
           content:
@@ -114,6 +120,285 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+    delete:
+      description: Removes a subscriber
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema: 
+            type: string
+      responses:
+        '200':
+          description: Subscriber has been deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+        '404':
+          description: Subscriber based on id is doesn't exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'    
+  /archive:
+    get:
+      description: Returns a list of archive
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of archive returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Archive'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'  
+  /certificate:
+    get:
+      description: Returns a list of certificates
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of certificates returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Certificate'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /certificate/{_id}:
+    get:
+      description: Returns the certificate with the given ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Certificate data returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Certificate'
+        '404':
+          description: Certificate with the given ID was not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      description: Update a certificate
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          schema:
+            type: string  
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Certificate'
+      responses:
+        '201':
+          description: Certificate has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Certificate'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /colleague:
+    get:
+      description: Returns a list of colleagues
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of colleagues returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Colleague'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      description: Creates a new colleague
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Colleague'
+      responses:
+        '201':
+          description: Colleague has been created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Colleague'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /colleague/{_id}:
+    get:
+      description: Returns the colleague with the given ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Colleague data returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Colleague'
+        '404':
+          description: Colleague with the given ID was not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      description: Update a colleague
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          schema:
+            type: string  
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Colleague'
+      responses:
+        '201':
+          description: Colleague has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Colleague'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      description: Removes a colleague
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema: 
+            type: string
+      responses:
+        '200':
+          description: Colleague has been deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+        '404':
+          description: Colleague based on id is doesn't exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'                                                    
 components:
   securitySchemes:
     bearerAuth:            # arbitrary name for the security scheme
@@ -138,6 +423,118 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Post'
+    Subscriber:
+      type: object
+      required:
+        - date
+        - name
+        - postalCode
+        - city
+        - address
+        - licence_id
+        - licenced_seasons
+        - seasons_left
+        - amount
+        - colleague
+      properties:
+        date:
+          type: string
+        name:
+          type: string
+        postalCode:
+          type: number
+        city:
+          type: string
+        address:
+          type: string  
+        licence_id:
+          type: string
+        licenced_seasons:
+          type: number    
+        seasons_left:
+          type: number
+        amount:
+          type: number
+        colleague:
+          type: string
+    Archive:
+      type: object
+      required:
+        - date
+        - name
+        - postalCode
+        - city
+        - address
+        - licence_id
+        - licenced_seasons
+        - amount
+        - colleague
+      properties:
+        date:
+          type: string
+        name:
+          type: string
+        postalCode:
+          type: number
+        city:
+          type: string
+        address:
+          type: string  
+        licence_id:
+          type: string
+        licenced_seasons:
+          type: number    
+        amount:
+          type: number
+        colleague:
+          type: string            
+    Certificate:
+      type: object
+      required:
+        - name
+        - taxNumber
+        - headquarters
+        - date
+        - legalReference
+        - director
+      properties:
+        name:
+          type: string
+        taxNumber:
+          type: string
+        headquarters:
+          type: string
+        date:
+          type: string
+        legalReference:
+          type: string  
+        director:
+          type: string
+        subscriber:
+          type: object
+          $ref: '#/components/schemas/Subscriber'
+    Colleague:
+      type: object
+      required:
+        - name
+        - birth_date
+        - postalCode
+        - city
+        - address
+        - salary
+      properties:
+        name:
+          type: string
+        birth_date:
+          type: string
+        postalCode:
+          type: number
+        city:
+          type: string
+        address:
+          type: string  
+        salary:
+          type: string      
     Post:
       type: object
       required:
