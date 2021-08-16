@@ -17,7 +17,7 @@ const seedCollection = async (model, fileName) => {
         );
         const list = JSON.parse(source);
         if (model && model.insertMany) {
-            await model.insertMany(list, { limit: 100 });
+            await model.insertMany(list, { limit: 500 });
         }
     }
 };

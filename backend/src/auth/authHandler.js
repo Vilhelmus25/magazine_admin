@@ -9,7 +9,7 @@ const UserModel = require('../models/user.model');
 // (async () => {
 //     // const users = UserModel.find();
 //     // if (!users || users.length < 1) {
-//     const admin = new UserModel({ name: 'Admin', email: 'admin@gmail.com', role: '2', password: 'admin_pw' });
+//     const admin = new UserModel({ name: 'MagazineAdmin', email: 'magazineAdmin@gmail.com', role: '2', password: 'koalamagazine' });
 //     const user = new UserModel({ name: 'User', email: 'user@gmail.com', role: 1, password: 'user_pw' });
 //     await admin.save();
 //     await user.save();
