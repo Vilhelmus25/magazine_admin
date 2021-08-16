@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { FieldBase } from 'src/app/areus-form/model/field-base';
 import { InputField } from 'src/app/areus-form/model/input-field';
-import { SelectField } from 'src/app/areus-form/model/select-field';
 import { Colleague } from 'src/app/model/colleague';
 import { ColleagueService } from 'src/app/service/colleague.service';
 
