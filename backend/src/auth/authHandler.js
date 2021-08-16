@@ -6,15 +6,15 @@ const UserModel = require('../models/user.model');
 
 // ITT TÁPLÁLJUK BELE A USEREKET, AMIKOR A DATA/DB ÜRES
 
-// (async () => {
-//     // const users = UserModel.find();
-//     // if (!users || users.length < 1) {
-//     const admin = new UserModel({ name: 'MagazineAdmin', email: 'magazineAdmin@gmail.com', role: '2', password: 'koalamagazine' });
-//     const user = new UserModel({ name: 'User', email: 'user@gmail.com', role: 1, password: 'user_pw' });
-//     await admin.save();
-//     await user.save();
-//     // }
-// })();
+(async () => {
+    // const users = UserModel.find();
+    // if (!users || users.length < 1) {
+    const admin = new UserModel({ name: 'MagazineAdmin', email: 'magazineAdmin@gmail.com', role: '2', password: 'koalamagazine' });
+    const user = new UserModel({ name: 'User', email: 'user@gmail.com', role: 1, password: 'user_pw' });
+    await admin.save();
+    await user.save();
+    // }
+})();
 
 const refreshTokens = [];
 

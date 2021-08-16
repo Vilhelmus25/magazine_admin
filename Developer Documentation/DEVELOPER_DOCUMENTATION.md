@@ -38,7 +38,7 @@ Az alkalmazás feladata, hogy a Koala képességfejlesztő gyermekmagazin előfi
 **Komponens neve:** home  
 **Komponens helye:** page/home
 
-Egy mobiloptimalizált, látványos felületen nagyban a Koala magazin logója látható, alatta egy carousel-ben a legutóbbi számok kisképe jelenik meg, majd az aktuális hónapban eddig szerzett új előfizetések száma.
+Egy mobiloptimalizált, látványos felületen nagyban a Koala magazin logója látható, alatta a legutóbbi számok kisképe jelenik meg, majd pár fontos információ.
 
 _Megjegyzés_: Opcionálisan képek jelennek meg egy BS carousel komponensben.
 
@@ -46,15 +46,23 @@ _Megjegyzés_: Opcionálisan képek jelennek meg egy BS carousel komponensben.
 ---
 ## _**2. Navigáció**_
 
+**Komponens neve:** side-nav  
+**Komponens helye:** common/side-nav
 **Komponens neve:** navigation  
 **Komponens helye:** common/navigation
 
-Az egyes aloldalakra az Angular routing segítségével lehet navigálni egy BS navbar segítségével.
+Az egyes side-nav oldalakra az Angular routing segítségével lehet navigálni egy BS navbar segítségével.
 
-- Az Előfizetők menügombra kattintva az alkalmazás az előfizetőket listázó aloldalra navigálva megjeleníti az összes előfizető adatbázisban tárolt adatait.
-- Az Archivált előfizetők menügombra kattintva az alkalmazás az Archivált előfizetők aloldalra navigálva megjeleníti a archivált előfizetők adatbázisban tárolt adatait.
-- Az Igazolás sablon menügombra kattintva az alkalmazás az Igazolás sablon aloldalra navigálva megjeleníti az aktuális igazolás sablon adatbázisban tárolt adatait.
-- A Statisztikák menügombra kattintva az alkalmazás a Statisztikák aloldalra navigálva megjeleníti a statisztikák adatbázisban tárolt adatokat.
+- A Subscribers menügombra kattintva az alkalmazás az előfizetőket listázó aloldalra navigálva megjeleníti az összes előfizető adatbázisban tárolt adatait.
+- Az Archive menügombra kattintva az alkalmazás az Archivált előfizetők aloldalra navigálva megjeleníti a archivált előfizetők adatbázisban tárolt adatait.
+- A Colleagues menügombra kattintva az alkalmazás a Kollégákat kilistázó aloldalra navigálva megjeleníti az összes Kolléga adatbázisban tárolt adatait.
+- A Certificate-Edit sablon menügombra kattintva az alkalmazás az Igazolás sablon aloldalra navigálva megjeleníti az aktuális igazolás sablon adatbázisban tárolt adatait.
+- A Statistics menügombra kattintva az alkalmazás a Statisztikák aloldalra navigálva megjeleníti a statisztikák adatbázisban tárolt adatokat.
+
+Kezelési felületek, mint például navigáiós sáv elrejtése és bejelentkezés/kijelentkezés funkciók.
+
+- "Bars" ikonra kattintva az oldalnavigációs sáv kezelhető.
+- "Login/Logout" ikonra kattintva a ki- és bejelentkezés kezelhető. 
 
 ---
 ---
@@ -80,7 +88,7 @@ Ezek az adatok a következők:
 - city (város)
 - address (cím)
 - licence_id (szerződés azonosító)
-- licenced_seasons (a kezdeti előfizetési évszakszám)
+- licenced_seasons (a kezdeti előfizetési évszakszám mennyisége)
 - seasons_left (hátralévő előfizetői évszak)
 - amount (rendelt mennyiség évszakonként)
 - colleague (a diszpécser kolléga, aki meggyőzte az előfizetőt)
@@ -89,12 +97,24 @@ Ezek az adatok a következők:
 
 **Create:**
 
-> _Az Add New Subscriber gombra kattintva egy űrlap segítségével 
+> _Az Create New Subscriber gombra kattintva egy űrlap segítségével 
 > új előfizető adatai vehetők fel és menthetők el az adatbázisban._
 
-- A Add New Subscriber gombra való kattintással egy új oldal nyílik meg, ahol egy új előfizető adatait lehet input mezők segítségével bevinni.
-- A Save gombra kattintva a program az adatbázisba menti a megadott adatokat.
+- A Create New Subscriber gombra való kattintással egy új oldal nyílik meg, ahol egy új előfizető adatait lehet input mezők segítségével bevinni.
+- A Send gombra kattintva a program az adatbázisba menti a megadott adatokat.
 - A Back gombra kattintva az összes előfizetőt listázó oldalra navigál vissza az alkalmazás.
+
+---
+
+**Archiválás:**
+
+> _Legyen lehetőség archiválásra évszak záráskor. Az Archiválás gombra kattintva,
+> az összes előfizető hátralévő évszámainak a száma 1-el csökken és akié 0 lett
+> vagyis lejárt az előfizettési kvótája, kikerül az előfizetői adatbázisból és átkerül az archiválás táblába._
+
+- Az Archive gombra kattintva egy felugró ablak megkérdezi a felhasználót, hogy valóban végre szeretné-e hajtani az archiválást, mert ez egy nem visszafordítható folyamat.
+- Ha Proceed-re kattint, akkor végrehajtódik az archiválás, a felugró ablak eltűnik és a táblázat frissül.
+- Ha a Discard-ra kattint a felhasználó, akkor eltűnik a felugró ablak és nem történik archiválás.
 
 ---
 
@@ -104,8 +124,19 @@ Ezek az adatok a következők:
 > a kiválaszott előfizető adatai szerkeszthetők és menthetők az adatbázisban._
 
 - Az Edit gombra való kattintással az előfizető egyedi adatait tartalmazó aloldal nyílik meg, ahol a választott előfizető adatait lehet szerkeszthető mezők segítségével módosítani.
-- A Save gombra kattintva a program az adatbázisba menti a módosított adatokat.
+- A Send gombra kattintva a program az adatbázisba menti a módosított adatokat.
 - A Back gombra kattintva az összes előfizetőt listázó oldalra navigál vissza az alkalmazás.
+
+---
+
+**Előfizetői igazolás kiállítása:**
+
+> _Az Igazolás Kiállítása gombra kattintva, az aktuális előfizető adatai alapján
+> egy aloldalon lesz látható a kiállításra váró igazolás mintája._
+
+- Az Igazolás Kiállítása gombra kattintva betöltődik az aktuális előfizető adataiból képzett kiállításra váró igazolás előnézeti képe, ahol át lehet nézni az adatokat. A mintán szerepel az előfizető adatai, valamint a kibocsájtó cég adatai, jogi hivatkozás, aláírás és pecsét helyével.
+- A Print gombra kattintva lementődik a formanyomtatvány pdf formátumban, a Windows-intéző által kiválasztható lesz a mentés helye, alapból lesz erre a programon belül egy mappa fenntartva. A fájl neve tartalmazni fogja az előfizető nevét és az előfizetési azonosítót, valamint a kiállítás dátumát.
+-  A Back gombra kattintva az összes előfizetőt listázó oldalra navigál vissza az alkalmazás.
 
 ---
 
@@ -138,29 +169,6 @@ Ezek az adatok a következők:
 - A fejlécen található felfelé mutató nyíl ikonra kattintva az alkalmazás fordított sorba rendezi a választott adatok szerint az entitásokat.
 
 ---
-
-**Archiválás:**
-
-> _Legyen lehetőség archiválásra évszak záráskor. Az Archiválás gombra kattintva,
-> az összes előfizető hátralévő évszámainak a száma 1-el csökken és akié 0 lett
-> vagyis lejárt az előfizettési kvótája, az archiválásra kerül._
-
-- Az Archive gombra kattintva egy felugró ablak megkérdezi a felhasználót, hogy valóban végre szeretné-e hajtani az archiválást, mert ez egy nem visszafordítható folyamat.
-- Ha Proceed-re kattint, akkor végrehajtódik az archiválás, a felugró ablak eltűnik és a táblázat frissül.
-- Ha a Discard-ra kattint a felhasználó, akkor eltűnik a felugró ablak és nem történik archiválás.
-
----
-
-**Előfizetői igazolás kiállítása:**
-
-> _Az Igazolás Kiállítása gombra kattintva, az aktuális előfizető adatai alapján
-> egy aloldalon lesz látható a kiállításra váró igazolás mintája._
-
-- Az Igazolás Kiállítása gombra kattintva betöltődik az aktuális előfizető adataiból képzett kiállításra váró igazolás előnézeti képe, ahol át lehet nézni az adatokat. A mintán szerepel az előfizető adatai, valamint a kibocsájtó cég adatai, jogi hivatkozás, aláírás és pecsét helyével.
-- A Print gombra kattintva lementődik a formanyomtatvány pdf formátumban, a Windows-intéző által kiválasztható lesz a mentés helye, alapból lesz erre a programon belül egy mappa fenntartva. A fájl neve tartalmazni fogja az előfizető nevét és az előfizetési azonosítót, valamint a kiállítás dátumát.
--  A Back gombra kattintva az összes előfizetőt listázó oldalra navigál vissza az alkalmazás.
-
----
 ---
 ## _**4. Az Archivált előfizetők oldala**_
 ---
@@ -172,17 +180,17 @@ _Megjegyzés:_ Az elérési útvonalban az aloldalak elnevezése előtt szerepel
 > _Az alkalmazás az Archivált előfizetők oldalra navigálva megjeleníti az
 > archivált előfizetők adatbázisban tárolt adatait egy listában._
 
-**Osztály neve:** archived-subscriber  
-**Osztály helye:** model/archived-subscriber  
+**Osztály neve:** archive  
+**Osztály helye:** model/archive 
 
-**Service neve:** archived-subscriber   
-**Service helye:** service/archived-subscriber  
+**Service neve:** archive
+**Service helye:** service/archive
 
-**Komponens neve:** archived-subscriber    
-**Komponens helye:** page/archived-subscriber  
+**Komponens neve:** archive    
+**Komponens helye:** page/archive  
 
 Az aloldal megjeleníti az összes archivált előfizetők adatait lista formátumban.
-Csak nézegetős felület, nem lehet módosítani az adatokat.  
+Csak nézegetős felület, nem lehet módosítani az adatokat!  
 
 Ezek az adatok megegyeznek szinte teljesen Előfizetők adatbázisa oldallal, ezek a következők:
 - id (azonosító - nem lesz mgejelenítve)
@@ -218,25 +226,101 @@ Ezek az adatok megegyeznek szinte teljesen Előfizetők adatbázisa oldallal, ez
 
 ---
 ---
-## _**5. Az Igazolás sablon oldala**_
+## _**5. Kollégák adatbázis**_
 ---
 
-_Megjegyzés:_ Az elérési útvonalban az aloldalak elnevezése előtt szerepel a `sample/` kifejezés.
+**Osztály neve:** colleague   
+**Osztály helye:** model/colleague
+
+**Service neve:** colleague  
+**Service helye:** service/colleague
+
+**Komponens neve:** colleague  
+**Komponens helye:** page/colleague
+
+Az oldalon megjelenik az összes kolléga adata egy helyen.  
+
+Ezek az adatok a következők:
+- id (azonosító - nem lesz mgejelenítve)
+- name (előfizető neve)
+- birth_date (születési dátum)
+- postalcode (irányítószám)
+- city (város)
+- address (cím)
+- salary (a kolléga, havi fizetése)
 
 ---
 
-> _Az alkalmazás az Igazolás sablon oldalra navigálva megjeleníti az igazolás
-> sablonját egy dummy adattal, ahol a cég adatait lehet módosítani az igazoláson,
-> bármilyen változás esetén._
+**Create:**
 
-**Osztály neve:** certificate-sample  
-**Osztály helye:** model/certificate-sample  
+> _Az Create New Colleague gombra kattintva egy űrlap segítségével 
+> új kolléga adatai vehetők fel és menthetők el az adatbázisban._
 
-**Service neve:** certificate-sample  
-**Service helye:** service/certificate-sample  
+- A Create New Colleague gombra való kattintással egy új oldal nyílik meg, ahol egy új kolléga adatait lehet input mezők segítségével bevinni.
+- A Send gombra kattintva a program az adatbázisba menti a megadott adatokat.
+- A Back gombra kattintva az összes kollégát listázó oldalra navigál vissza az alkalmazás.
 
-**Komponens neve:** certificate-sample    
-**Komponens helye:** page/certificate-sample  
+---
+
+**Edit:**
+
+> _Az Edit ikonnal ellátott gombra kattintva egy űrlap segítségével
+> a kiválaszott kolléga adatai szerkeszthetők és menthetők az adatbázisban._
+
+- Az Edit gombra való kattintással a kolléga egyedi adatait tartalmazó aloldal nyílik meg, ahol a választott kolléga adatait lehet szerkeszthető mezők segítségével módosítani.
+- A Send gombra kattintva a program az adatbázisba menti a módosított adatokat.
+- A Back gombra kattintva az összes kollégát listázó oldalra navigál vissza az alkalmazás.
+
+---
+
+**Delete:**
+
+> _A Delete ikonnal ellátott gombra kattintva 
+> egy kolléga törölhető az adatbázisból._
+
+- A Delete gombra való kattintással az alkalmazás megkérdezi, hogy valóban törölni szeretnénk a kijelölt kollégát, egy felugró ablakban (modal). Ha a felugró ablakban a Confirm gombra kattint a felhasználó, akkor törli a kolléga entitását az adatbázisból. Ha a Cancel gombra kattint a felhasználó, eltűnik a felugró ablak és minden változatlan marad.
+- Törlés esetén az alkalmazás frissíti a listaoldalt, ahol a már törölt kolléga nem lesz látható.
+
+---
+
+**Szabadszavas keresés:**
+
+> _Egy szabadszavas input mező segítségével bármilyen kulcsszóra lehet keresni az
+> adatbázisban a választott kategórián belül._
+
+- A Search gombra való kattintással az alkalmazás kikeresi a kulcsszónak megfelelő entitásokat az adatbázisnak a legördülő menüben választott kategóriájából, és listázza azokat.
+
+---
+
+**Rendezés:**
+
+> _A lista oszlopainak fejlécére való kattintással növekvő és csökkenő sorrendbe
+> rendezhetőek a szám típusú adatok, illetve abc-sorrendbe, valamint fordított
+> abc-sorrendbe rendezhetőek a szöveges adatok._
+
+- A fejlécen található lefelé mutató nyíl ikonra kattintva az alkalmazás sorba rendezi a választott adatok szerint az entitásokat.
+- A fejlécen található felfelé mutató nyíl ikonra kattintva az alkalmazás fordított sorba rendezi a választott adatok szerint az entitásokat.
+
+---
+---
+## _**6. Az Igazolás sablon oldala**_
+---
+
+_Megjegyzés:_ Az elérési útvonalban az aloldalak elnevezése előtt szerepel a `certificate/edit/` kifejezés.
+
+---
+
+> _Az alkalmazás a Certificate-Edit oldalra navigálva megjeleníti az igazolás
+> cég oldali adatait, ahol azokon lehet módosítani, bármilyen változás esetén._
+
+**Osztály neve:** certificate  
+**Osztály helye:** model/certificate  
+
+**Service neve:** certificate  
+**Service helye:** service/certificate  
+
+**Komponens neve:** certificate    
+**Komponens helye:** page/certificate  
 
 Az aloldal megjeleníti az Igazolás sablont a cég adataival, megtekintés céljából, szerkeszteni egy gomb lenyomása után lehet.
 A sablon adatai a következők:
@@ -252,16 +336,16 @@ A sablon adatai a következők:
 
 **Adatok módosítása:**
 
-> _Egy Edit data módosítása gombra kattintva szerkeszthető lesz valamennyi adat.
+> _Egy Send gombra kattintva elküldésre kerül a változás.
 
-- Az Edit data módosítása gombra kattintva a legtöbb adat szerkeszthetővé válik, a gomb eltűnik és helyette egy Confirm és egy Discard gomb jelenik meg. A Return to Subscribers gomb inaktiválódik.
+- A Send data gombra kattintva az esetlegesen felvitt változások mentésre kerülnek, mostantól az igazolásokon ezen adatok szerepelnek.
 - A Confirm gombra kattintva a bevitt változtatások megtörténnek, a sablon adatbázisa frissül.
 - a Discard gombra kattintva az esetlegesen bevitt változtatások nem kiviteleződnek, eltűnik a Confirm és a Discard gomb, visszakerül az Edit data gomb.
 - A Return to Subscribers gomb lenyomásakkor visszanavigál az oldal az Előfizetők adatbázisához oldalra.
 
 ---
 ---
-## _**6. Statisztikák**_
+## _**7. Statisztikák**_
 ---
 
 **Osztály neve:** statistics   
@@ -273,9 +357,14 @@ A sablon adatai a következők:
 **Komponens neve:** statistics  
 **Komponens helye:** page/statistics
 
-Különböző statisztikai diagramok megjelenítése dashboard formában.
+Különböző statisztikai diagramok megjelenítése 'barChart' formában.
 
-- Egy statisztikai diagram az egyes évek-ről, hogy az év hónapjaiban hány megrendelés érkezett, az évek között lehet navigálni.
+- Egy statisztikai diagram az egyes évek-ről, hogy az év hónapjaiban hány ügyféllel köttetett szerződés.
+
+**RefreshAll:**
+
+> _A RefreshAll gombra kattintva 
+> betölti az aktuális statisztikákat._
 
 ---
 ---
